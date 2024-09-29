@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1727607685
+timestamp 1727641872
 << metal1 >>
 rect 203 2509 209 2569
 rect 269 2509 275 2569
@@ -461,62 +461,54 @@ rect 2819 566 2824 626
 rect 2754 561 2824 566
 rect 2759 462 2819 561
 rect 2304 30 2374 35
-use guard_left  guard_left_0
-timestamp 1727597281
+use transistor_pair_bus9  transistor_pair_bus9_0
+timestamp 1727641816
 transform 1 0 60 0 1 0
-box -60 0 188 1292
-use guard_left  guard_left_1
-timestamp 1727597281
+box -60 0 2936 1292
+use transistor_pair_bus9  transistor_pair_bus9_1
+timestamp 1727641816
 transform 1 0 60 0 1 1342
-box -60 0 188 1292
-use guard_right  guard_right_0
-timestamp 1727597281
-transform 1 0 2460 0 1 0
-box 288 0 536 1292
-use guard_right  guard_right_1
-timestamp 1727597281
-transform 1 0 2460 0 1 1342
-box 288 0 536 1292
+box -60 0 2936 1292
 use inverter  x1
-timestamp 1727607685
+timestamp 1727638268
 transform 1 0 60 0 1 0
-box 0 0 476 1292
+box 88 36 388 1226
 use inverter  x2
-timestamp 1727607685
+timestamp 1727638268
 transform 1 0 360 0 1 0
-box 0 0 476 1292
+box 88 36 388 1226
 use inverter  x3
-timestamp 1727607685
+timestamp 1727638268
 transform 1 0 660 0 1 0
-box 0 0 476 1292
+box 88 36 388 1226
 use inverter  x4
-timestamp 1727607685
+timestamp 1727638268
 transform 1 0 360 0 1 1342
-box 0 0 476 1292
+box 88 36 388 1226
 use inverter  x5
-timestamp 1727607685
+timestamp 1727638268
 transform 1 0 660 0 1 1342
-box 0 0 476 1292
+box 88 36 388 1226
 use nor3  x6
-timestamp 1727607685
+timestamp 1727637956
 transform 1 0 960 0 1 0
 box 0 0 1076 1292
 use nor3  x7
-timestamp 1727607685
+timestamp 1727637956
 transform 1 0 1860 0 1 0
 box 0 0 1076 1292
 use nor3  x8
-timestamp 1727607685
+timestamp 1727637956
 transform 1 0 960 0 1 1342
 box 0 0 1076 1292
 use nor3  x9
-timestamp 1727607685
+timestamp 1727637956
 transform 1 0 1860 0 1 1342
 box 0 0 1076 1292
 use inverter  xdummy
-timestamp 1727607685
+timestamp 1727638268
 transform 1 0 60 0 1 1342
-box 0 0 476 1292
+box 88 36 388 1226
 << labels >>
 flabel metal2 148 218 272 252 0 FreeSans 128 0 0 0 EN
 port 2 nsew

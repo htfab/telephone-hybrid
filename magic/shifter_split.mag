@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1727607685
+timestamp 1727638502
 << metal1 >>
 rect 88 6003 388 6061
 rect 221 5019 255 5971
@@ -79,17 +79,9 @@ rect 221 424 255 561
 rect 206 372 212 424
 rect 264 372 270 424
 use inverter  inverter_0
-timestamp 1727607685
+timestamp 1727638268
 transform 1 0 0 0 1 4835
-box 0 0 476 1292
-use transistor_pair  transistor_pair_0
-timestamp 1727597281
-transform 1 0 0 0 1 1342
-box 0 0 476 1292
-use transistor_pair  transistor_pair_1
-timestamp 1727597281
-transform 1 0 0 0 1 0
-box 0 0 476 1292
+box 88 36 388 1226
 << labels >>
 flabel metal1 312 209 346 1053 0 FreeSans 256 0 0 0 OUT
 port 2 nsew

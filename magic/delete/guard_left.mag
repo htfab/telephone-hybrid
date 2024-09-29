@@ -1,0 +1,37 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1727636046
+<< nwell >>
+rect -60 606 188 1292
+<< pwell >>
+rect -60 556 126 557
+rect -60 0 188 556
+<< mvpsubdiff >>
+rect -14 462 88 520
+rect -14 412 44 462
+rect -14 144 -2 412
+rect 32 144 44 412
+rect -14 94 44 144
+rect -14 36 88 94
+<< mvnsubdiff >>
+rect 6 1168 88 1226
+rect 6 1118 64 1168
+rect 6 780 18 1118
+rect 52 780 64 1118
+rect 6 730 64 780
+rect 6 672 88 730
+<< mvpsubdiffcont >>
+rect -2 144 32 412
+<< mvnsubdiffcont >>
+rect 18 780 52 1118
+<< locali >>
+rect 18 1180 88 1214
+rect 18 1118 52 1180
+rect 18 718 52 780
+rect 18 684 88 718
+rect -2 474 88 508
+rect -2 412 32 474
+rect -2 82 32 144
+rect -2 48 88 82
+<< end >>

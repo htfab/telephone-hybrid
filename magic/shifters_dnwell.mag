@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1727607728
+timestamp 1727641773
 << dnwell >>
 rect -606 4500 3302 6733
 rect -606 -335 3302 3240
@@ -74,7 +74,7 @@ rect 3291 -324 3325 -298
 rect -629 -358 -569 -324
 rect 3265 -358 3325 -324
 use shifters_split  shifters_split_0
-timestamp 1727607728
+timestamp 1727638502
 transform 1 0 60 0 1 0
 box -60 0 2636 6127
 << end >>

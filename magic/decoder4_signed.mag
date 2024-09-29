@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1727607772
+timestamp 1727641872
 << metal1 >>
 rect -166 12648 -160 12700
 rect -108 12648 -102 12700
@@ -235,7 +235,7 @@ rect 2309 36 2369 13304
 rect 2609 36 2669 13304
 use decoder2  x1
 array 0 0 2996 0 4 2684
-timestamp 1727607685
+timestamp 1727641872
 transform 1 0 0 0 1 0
 box 0 0 2996 2634
 << labels >>

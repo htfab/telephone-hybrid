@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1727607685
+timestamp 1727638007
 << metal1 >>
 rect 88 1168 388 1226
 rect 130 845 164 1168
@@ -13,10 +13,6 @@ rect 221 261 346 295
 rect 221 141 255 261
 rect 312 209 346 261
 rect 88 36 388 94
-use transistor_pair  transistor_pair_1
-timestamp 1727597281
-transform 1 0 0 0 1 0
-box 0 0 476 1292
 << labels >>
 flabel metal1 88 1168 388 1226 0 FreeSans 256 0 0 0 VDD
 port 1 nsew

@@ -1,0 +1,30 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1727637956
+<< error_s >>
+rect 0 606 476 1292
+rect 118 213 188 343
+rect 288 213 358 343
+<< nwell >>
+rect 0 606 476 1292
+<< pwell >>
+rect 0 0 476 556
+<< metal1 >>
+rect 88 1168 388 1226
+rect 130 845 164 1053
+rect 221 768 255 1130
+rect 312 845 346 1053
+rect 130 209 164 347
+rect 221 141 255 415
+rect 312 209 346 347
+rect 88 36 388 94
+use nfet  nfet_0
+timestamp 1727597281
+transform 1 0 238 0 1 278
+box -120 -153 120 153
+use pfet  pfet_0
+timestamp 1727597281
+transform 1 0 238 0 1 949
+box -186 -200 186 200
+<< end >>

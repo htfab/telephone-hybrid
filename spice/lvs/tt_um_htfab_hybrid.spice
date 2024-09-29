@@ -1,41 +1,45 @@
 * NGSPICE file created from tt_um_htfab_hybrid.ext - technology: sky130A
 
-.subckt pfet a_n120_n100# a_n50_n197# a_50_n100# w_n144_n200#
-X0 a_50_n100# a_n50_n197# a_n120_n100# w_n144_n200# sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
-.ends
-
-.subckt nfet a_n50_n153# a_50_n65# a_n120_n65# VSUBS
-X0 a_50_n65# a_n50_n153# a_n120_n65# VSUBS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
-.ends
-
-.subckt transistor_pair m1_221_141# m1_130_845# w_0_606# a_88_462# pfet_0/VSUBS m1_312_209#
-+ m1_221_768# m1_130_209# m1_312_845#
-Xpfet_0 m1_130_845# m1_221_768# m1_312_845# w_0_606# pfet
-Xnfet_0 m1_221_141# m1_312_209# m1_130_209# pfet_0/VSUBS nfet
-.ends
-
-.subckt tie_high HI VDD transistor_pair_1/a_88_462# VSS
-Xtransistor_pair_1 m1_221_141# VDD VDD transistor_pair_1/a_88_462# VSS m1_221_141#
-+ m1_221_141# VSS HI transistor_pair
+.subckt transistor_pair_bus VDD VSS a_788_125# a_2388_849# a_1788_849# a_1018_849#
++ a_488_752# a_188_125# a_1188_849# a_418_849# a_2218_213# a_588_849# a_1618_213#
++ a_2388_213# a_1788_213# a_1018_213# a_1188_213# a_418_213# a_2288_125# a_1988_752#
++ a_1688_125# a_588_213# a_1918_849# a_1388_752# a_1088_125# a_1318_849# a_788_752#
++ a_488_125# a_2088_849# a_1488_849# a_718_849# a_188_752# a_888_849# a_118_849# a_1918_213#
++ a_1318_213# a_288_849# a_2088_213# a_1488_213# a_718_213# a_1988_125# a_2288_752#
++ a_888_213# a_118_213# a_1688_752# a_1388_125# a_2218_849# a_288_213# a_1618_849#
++ a_1088_752#
+X0 a_2088_849# a_1988_752# a_1918_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X1 a_288_213# a_188_125# a_118_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X2 a_588_213# a_488_125# a_418_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X3 a_888_213# a_788_125# a_718_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X4 a_288_849# a_188_752# a_118_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X5 a_588_849# a_488_752# a_418_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X6 a_1188_213# a_1088_125# a_1018_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X7 a_888_849# a_788_752# a_718_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X8 a_1488_213# a_1388_125# a_1318_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X9 a_2388_213# a_2288_125# a_2218_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X10 a_1788_213# a_1688_125# a_1618_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X11 a_1188_849# a_1088_752# a_1018_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X12 a_2088_213# a_1988_125# a_1918_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X13 a_1488_849# a_1388_752# a_1318_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X14 a_2388_849# a_2288_752# a_2218_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X15 a_1788_849# a_1688_752# a_1618_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
 .ends
 
 .subckt tie_highs tie_high_1[3]/HI tie_high_1[0]/HI tie_high_1[7]/HI tie_high_1[4]/HI
-+ tie_high_1[1]/HI tie_high_1[5]/HI tie_high_1[2]/HI tie_high_1[7]/VDD VSUBS tie_high_1[6]/HI
-Xtie_high_1[0] tie_high_1[0]/HI tie_high_1[7]/VDD VSUBS VSUBS tie_high
-Xtie_high_1[1] tie_high_1[1]/HI tie_high_1[7]/VDD tie_high_1[1]/transistor_pair_1/a_88_462#
-+ VSUBS tie_high
-Xtie_high_1[2] tie_high_1[2]/HI tie_high_1[7]/VDD tie_high_1[2]/transistor_pair_1/a_88_462#
-+ VSUBS tie_high
-Xtie_high_1[3] tie_high_1[3]/HI tie_high_1[7]/VDD tie_high_1[3]/transistor_pair_1/a_88_462#
-+ VSUBS tie_high
-Xtie_high_1[4] tie_high_1[4]/HI tie_high_1[7]/VDD tie_high_1[4]/transistor_pair_1/a_88_462#
-+ VSUBS tie_high
-Xtie_high_1[5] tie_high_1[5]/HI tie_high_1[7]/VDD tie_high_1[5]/transistor_pair_1/a_88_462#
-+ VSUBS tie_high
-Xtie_high_1[6] tie_high_1[6]/HI tie_high_1[7]/VDD tie_high_1[6]/transistor_pair_1/a_88_462#
-+ VSUBS tie_high
-Xtie_high_1[7] tie_high_1[7]/HI tie_high_1[7]/VDD tie_high_1[7]/transistor_pair_1/a_88_462#
-+ VSUBS tie_high
++ tie_high_1[1]/HI tie_high_1[5]/HI tie_high_1[2]/HI VSUBS tie_high_1[7]/VDD tie_high_1[6]/HI
+Xtransistor_pair_bus_0 tie_high_1[7]/VDD VSUBS tie_high_1[2]/m1_221_141# tie_high_1[7]/HI
++ tie_high_1[5]/HI tie_high_1[7]/VDD tie_high_1[1]/m1_221_141# tie_high_1[0]/m1_221_141#
++ tie_high_1[3]/HI tie_high_1[7]/VDD VSUBS tie_high_1[1]/HI VSUBS tie_high_1[7]/m1_221_141#
++ tie_high_1[5]/m1_221_141# VSUBS tie_high_1[3]/m1_221_141# VSUBS tie_high_1[7]/m1_221_141#
++ tie_high_1[6]/m1_221_141# tie_high_1[5]/m1_221_141# tie_high_1[1]/m1_221_141# tie_high_1[7]/VDD
++ tie_high_1[4]/m1_221_141# tie_high_1[3]/m1_221_141# tie_high_1[7]/VDD tie_high_1[2]/m1_221_141#
++ tie_high_1[1]/m1_221_141# tie_high_1[6]/HI tie_high_1[4]/HI tie_high_1[7]/VDD tie_high_1[0]/m1_221_141#
++ tie_high_1[2]/HI tie_high_1[7]/VDD VSUBS VSUBS tie_high_1[0]/HI tie_high_1[6]/m1_221_141#
++ tie_high_1[4]/m1_221_141# VSUBS tie_high_1[6]/m1_221_141# tie_high_1[7]/m1_221_141#
++ tie_high_1[2]/m1_221_141# VSUBS tie_high_1[5]/m1_221_141# tie_high_1[4]/m1_221_141#
++ tie_high_1[7]/VDD tie_high_1[0]/m1_221_141# tie_high_1[7]/VDD tie_high_1[3]/m1_221_141#
++ transistor_pair_bus
 .ends
 
 .subckt tie_highs_dnwell tie_highs_0/tie_high_1[7]/HI tie_highs_0/tie_high_1[4]/HI
@@ -44,39 +48,30 @@ Xtie_high_1[7] tie_high_1[7]/HI tie_high_1[7]/VDD tie_high_1[7]/transistor_pair_
 + tie_highs_0/VSUBS tie_highs_0/tie_high_1[7]/VDD
 Xtie_highs_0 tie_highs_0/tie_high_1[3]/HI tie_highs_0/tie_high_1[0]/HI tie_highs_0/tie_high_1[7]/HI
 + tie_highs_0/tie_high_1[4]/HI tie_highs_0/tie_high_1[1]/HI tie_highs_0/tie_high_1[5]/HI
-+ tie_highs_0/tie_high_1[2]/HI tie_highs_0/tie_high_1[7]/VDD tie_highs_0/VSUBS tie_highs_0/tie_high_1[6]/HI
++ tie_highs_0/tie_high_1[2]/HI tie_highs_0/VSUBS tie_highs_0/tie_high_1[7]/VDD tie_highs_0/tie_high_1[6]/HI
 + tie_highs
 .ends
 
-.subckt sky130_fd_pr__nfet_g5v0d10v5_83EA8U a_50_n239# a_n50_21# a_n108_n239# a_n108_109#
-+ a_50_109# a_n50_n327# VSUBS
-X0 a_50_109# a_n50_21# a_n108_109# VSUBS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
-X1 a_50_n239# a_n50_n327# a_n108_n239# VSUBS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+.subckt transistor_quartet_single VDD VSS a_188_125# a_288_1197# a_130_561# a_188_1536#
++ a_130_1633# a_130_1197# a_130_213# a_288_561# a_188_473# a_188_1100# a_288_213#
++ a_288_1633#
+X0 a_288_213# a_188_125# a_130_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X1 a_288_1633# a_188_1536# a_130_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X2 a_288_1197# a_188_1100# a_130_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X3 a_288_561# a_188_473# a_130_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
 .ends
 
-.subckt sky130_fd_pr__pfet_g5v0d10v5_KLSDQ5 w_n144_18# a_n108_118# a_n50_21# a_50_118#
-+ a_50_n318# w_n144_n418# a_n108_n318# a_n50_n415#
-X0 a_50_n318# a_n50_n415# a_n108_n318# w_n144_n418# sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
-X1 a_50_118# a_n50_21# a_n108_118# w_n144_18# sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
-.ends
-
-.subckt passgate EN UA UB VDD VSS a_100_810#
-Xsky130_fd_pr__nfet_g5v0d10v5_83EA8U_0 m1_272_1438# EN VSS UA UB EN VSS sky130_fd_pr__nfet_g5v0d10v5_83EA8U
-Xsky130_fd_pr__pfet_g5v0d10v5_KLSDQ5_1 VDD VDD EN m1_272_1438# UB VDD UA m1_272_1438#
-+ sky130_fd_pr__pfet_g5v0d10v5_KLSDQ5
-.ends
-
-.subckt passgate_single passgate_0/UA passgate_0/VDD passgate_0/VSS passgate_0/EN
-+ a_376_36# passgate_0/UB
-Xpassgate_0 passgate_0/EN passgate_0/UA passgate_0/UB passgate_0/VDD passgate_0/VSS
-+ passgate_0/a_100_810# passgate
+.subckt passgate_single passgate_0/UA passgate_0/VDD VSUBS passgate_0/EN passgate_0/UB
+Xtransistor_quartet_single_0 passgate_0/VDD VSUBS passgate_0/EN passgate_0/UA passgate_0/UB
++ passgate_0/EN passgate_0/m1_192_1101# passgate_0/UB passgate_0/m1_192_1101# passgate_0/UA
++ passgate_0/EN passgate_0/m1_192_1101# VSUBS passgate_0/VDD transistor_quartet_single
 .ends
 
 .subckt passgate_dnwell passgate_single_0/passgate_0/UB passgate_single_0/passgate_0/UA
-+ passgate_single_0/passgate_0/EN passgate_single_0/passgate_0/VSS passgate_single_0/passgate_0/VDD
++ passgate_single_0/passgate_0/EN passgate_single_0/VSUBS passgate_single_0/passgate_0/VDD
 Xpassgate_single_0 passgate_single_0/passgate_0/UA passgate_single_0/passgate_0/VDD
-+ passgate_single_0/passgate_0/VSS passgate_single_0/passgate_0/EN passgate_single_0/passgate_0/VSS
-+ passgate_single_0/passgate_0/UB passgate_single
++ passgate_single_0/VSUBS passgate_single_0/passgate_0/EN passgate_single_0/passgate_0/UB
++ passgate_single
 .ends
 
 .subckt sky130_fd_pr__res_xhigh_po_0p35_MDZYBC a_48_n1041# a_n284_n1041# a_n118_n1041#
@@ -160,53 +155,132 @@ Xsky130_fd_pr__res_xhigh_po_0p35_H47ZCG_0 m1_6856_6959# m1_5860_6959# m1_6358_15
 Xhybrid_0 hybrid_0/IN hybrid_0/LINE hybrid_0/OUT hybrid_0/VSS hybrid_0/VDD hybrid
 .ends
 
-.subckt inverter OUT VDD transistor_pair_1/a_88_462# IN VSS
-Xtransistor_pair_1 IN VDD VDD transistor_pair_1/a_88_462# VSS OUT IN VSS OUT transistor_pair
+.subckt transistor_pair_bus9 VDD VSS a_788_125# a_2388_849# a_1788_849# a_1018_849#
++ a_488_752# a_188_125# a_1188_849# a_418_849# a_2218_213# a_588_849# a_1618_213#
++ a_2388_213# a_1788_213# a_1018_213# a_1188_213# a_2588_752# a_418_213# a_2288_125#
++ a_1988_752# a_1688_125# a_2518_849# a_588_213# a_1918_849# a_1388_752# a_1088_125#
++ a_2688_849# a_1318_849# a_788_752# a_488_125# a_2088_849# a_1488_849# a_718_849#
++ a_188_752# a_2518_213# a_888_849# a_118_849# a_1918_213# a_2688_213# a_1318_213#
++ a_288_849# a_2088_213# a_1488_213# a_718_213# a_2588_125# a_1988_125# a_2288_752#
++ a_888_213# a_118_213# a_1688_752# a_1388_125# a_2218_849# a_288_213# a_1618_849#
++ a_1088_752#
+X0 a_2088_849# a_1988_752# a_1918_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X1 a_288_213# a_188_125# a_118_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X2 a_588_213# a_488_125# a_418_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X3 a_888_213# a_788_125# a_718_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X4 a_288_849# a_188_752# a_118_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X5 a_588_849# a_488_752# a_418_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X6 a_1188_213# a_1088_125# a_1018_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X7 a_888_849# a_788_752# a_718_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X8 a_1488_213# a_1388_125# a_1318_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X9 a_2388_213# a_2288_125# a_2218_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X10 a_1788_213# a_1688_125# a_1618_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X11 a_2688_213# a_2588_125# a_2518_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X12 a_1188_849# a_1088_752# a_1018_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X13 a_2088_213# a_1988_125# a_1918_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X14 a_1488_849# a_1388_752# a_1318_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X15 a_2388_849# a_2288_752# a_2218_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X16 a_1788_849# a_1688_752# a_1618_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X17 a_2688_849# a_2588_752# a_2518_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
 .ends
 
-.subckt nor3 B C OUT A VDD VSS
-Xtransistor_pair_0 C m1_612_845# VDD VSS VSS OUT C VSS OUT transistor_pair
-Xtransistor_pair_1 A VDD VDD VSS VSS OUT A VSS m1_312_845# transistor_pair
-Xtransistor_pair_2 B m1_312_845# VDD VSS VSS OUT B VSS m1_612_845# transistor_pair
-.ends
-
-.subckt decoder2 D0 D1 EN U0 U1 U2 U3 x5/transistor_pair_1/a_88_462# VDD VSS
-Xxdummy xdummy/OUT VDD xdummy/transistor_pair_1/a_88_462# VSS VSS inverter
-Xx1 x9/C VDD x1/transistor_pair_1/a_88_462# EN VSS inverter
-Xx3 x8/B VDD x3/transistor_pair_1/a_88_462# x9/B VSS inverter
-Xx2 x9/B VDD x2/transistor_pair_1/a_88_462# D0 VSS inverter
-Xx4 x9/A VDD VSS D1 VSS inverter
-Xx5 x7/A VDD x5/transistor_pair_1/a_88_462# x9/A VSS inverter
-Xx6 x8/B x9/C U0 x7/A VDD VSS nor3
-Xx7 x9/B x9/C U1 x7/A VDD VSS nor3
-Xx8 x8/B x9/C U2 x9/A VDD VSS nor3
-Xx9 x9/B x9/C U3 x9/A VDD VSS nor3
+.subckt decoder2 D0 D1 EN U0 U1 U2 U3 VDD VSS
+Xtransistor_pair_bus9_0 VDD VSS x9/B x7/m1_612_845# U0 VDD D0 EN x6/m1_312_845# VDD
++ VSS x9/B VSS U1 U0 VSS U0 x9/C VSS x9/B x7/A x9/C x7/m1_612_845# x9/B VDD x8/B x7/A
++ U1 x6/m1_312_845# x9/B D0 x7/m1_312_845# x6/m1_612_845# VDD EN VSS x8/B VDD VSS
++ U1 VSS x9/C U1 U0 VSS x9/C x7/A x9/B x8/B VSS x9/C x8/B x7/m1_312_845# x9/C x6/m1_612_845#
++ x7/A transistor_pair_bus9
+Xtransistor_pair_bus9_1 VDD VSS x9/A x9/m1_612_845# U2 VDD D1 VSS x8/m1_312_845# VDD
++ VSS x9/A VSS U3 U2 VSS U2 x9/C VSS x9/B x9/A x9/C x9/m1_612_845# x9/A VDD x8/B x9/A
++ U3 x8/m1_312_845# x9/A D1 x9/m1_312_845# x8/m1_612_845# VDD VSS VSS x7/A VDD VSS
++ U3 VSS xdummy/OUT U3 U2 VSS x9/C x9/A x9/B x7/A VSS x9/C x8/B x9/m1_312_845# xdummy/OUT
++ x8/m1_612_845# x9/A transistor_pair_bus9
 .ends
 
 .subckt decoder4_signed U15 U14 U13 U12 U11 U10 D3 U9 D2 U8 D1 U7 D0 U6 U5 U4 U3 U2
-+ U1 U0 x1[4]/x5/transistor_pair_1/a_88_462# VDD VSS
-Xx1[0] D3 D0 VDD x1[1]/EN x1[2]/EN x1[3]/EN x1[4]/EN x1[0]/x5/transistor_pair_1/a_88_462#
-+ VDD VSS decoder2
-Xx1[1] D1 D2 x1[1]/EN U8 U10 U12 U14 x1[1]/x5/transistor_pair_1/a_88_462# VDD VSS
-+ decoder2
-Xx1[2] D1 D2 x1[2]/EN U0 U2 U4 U6 x1[2]/x5/transistor_pair_1/a_88_462# VDD VSS decoder2
-Xx1[3] D1 D2 x1[3]/EN U9 U11 U13 U15 x1[3]/x5/transistor_pair_1/a_88_462# VDD VSS
-+ decoder2
-Xx1[4] D1 D2 x1[4]/EN U1 U3 U5 U7 x1[4]/x5/transistor_pair_1/a_88_462# VDD VSS decoder2
++ U1 U0 VDD VSS
+Xx1[0] D3 D0 VDD x1[1]/EN x1[2]/EN x1[3]/EN x1[4]/EN VDD VSS decoder2
+Xx1[1] D1 D2 x1[1]/EN U8 U10 U12 U14 VDD VSS decoder2
+Xx1[2] D1 D2 x1[2]/EN U0 U2 U4 U6 VDD VSS decoder2
+Xx1[3] D1 D2 x1[3]/EN U9 U11 U13 U15 VDD VSS decoder2
+Xx1[4] D1 D2 x1[4]/EN U1 U3 U5 U7 VDD VSS decoder2
 .ends
 
-.subckt passgates x8/EN x5/EN x2/EN x7/UA x4/UA x1/UA a_2908_36# x7/EN x4/EN x1/EN
-+ x6/UA x3/UA x6/EN x3/EN x8/VSS x8/UA x8/UB x5/UA x8/VDD x2/UA
-Xx1 x1/EN x1/UA x8/UB x8/VDD x8/VSS x8/VSS passgate
-Xx3 x3/EN x3/UA x8/UB x8/VDD x8/VSS x8/VSS passgate
-Xx2 x2/EN x2/UA x8/UB x8/VDD x8/VSS x2/a_100_810# passgate
-Xx4 x4/EN x4/UA x8/UB x8/VDD x8/VSS x8/VSS passgate
-Xx5 x5/EN x5/UA x8/UB x8/VDD x8/VSS x5/a_100_810# passgate
-Xx6 x6/EN x6/UA x8/UB x8/VDD x8/VSS x6/a_100_810# passgate
-Xx7 x7/EN x7/UA x8/UB x8/VDD x8/VSS x7/a_100_810# passgate
-Xx8 x8/EN x8/UA x8/UB x8/VDD x8/VSS x8/a_100_810# passgate
-Xxdummy1 x8/VSS x8/VSS x8/VSS x8/VDD x8/VSS xdummy1/a_100_810# passgate
-Xxdummy2 x8/VSS x8/VSS x8/VSS x8/VDD x8/VSS xdummy2/a_100_810# passgate
+.subckt transistor_quartet_bus10 VSS VDD a_788_125# a_1716_1633# a_2662_1633# a_1164_213#
++ a_1992_1197# a_1716_561# a_2386_1633# a_612_1633# a_730_561# a_336_1633# a_1992_213#
++ a_1716_1197# a_236_125# a_178_213# a_2662_1197# a_2168_473# a_612_1197# a_2386_1197#
++ a_1892_1536# a_336_1197# a_612_213# a_2544_561# a_1064_125# a_1616_473# a_1558_561#
++ a_2820_1633# a_1440_213# a_1616_1536# a_2544_1633# a_1892_125# a_512_1536# a_2268_1633#
++ a_1340_1100# a_236_1536# a_1064_1100# a_788_1100# a_1006_561# a_512_125# a_454_213#
++ a_2820_1197# a_2444_473# a_2386_561# a_2544_1197# a_2268_1197# a_1282_213# a_2820_561#
++ a_1340_125# a_1834_561# a_2268_213# a_1282_1633# a_2720_1536# a_2444_1536# a_2168_1536#
++ a_1716_213# a_730_213# a_1006_1633# a_1282_1197# a_2720_473# a_2662_561# a_2168_125#
++ a_1006_1197# a_2544_213# a_1440_1633# a_1616_125# a_1558_213# a_2110_561# a_1164_1633#
++ a_888_561# a_888_1633# a_2110_1633# a_1440_1197# a_888_1197# a_1164_1197# a_2444_125#
++ a_1006_213# a_2386_213# a_336_561# a_2110_1197# a_788_473# a_2820_213# a_1340_1536#
++ a_1164_561# a_1834_213# a_1892_1100# a_1064_1536# a_788_1536# a_178_561# a_1992_561#
++ a_1616_1100# a_236_473# a_512_1100# a_2720_125# a_2662_213# a_612_561# a_236_1100#
++ a_1064_473# a_1440_561# a_1834_1633# a_1892_473# a_1558_1633# a_2110_213# a_888_213#
++ a_730_1633# a_454_1633# a_512_473# a_454_561# a_2720_1100# a_178_1633# a_2444_1100#
++ a_1834_1197# a_1558_1197# a_2168_1100# a_730_1197# a_1340_473# a_1282_561# a_454_1197#
++ a_1992_1633# a_336_213# a_178_1197# a_2268_561#
+X0 a_2820_1197# a_2720_1100# a_2662_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X1 a_2820_561# a_2720_473# a_2662_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X2 a_1716_213# a_1616_125# a_1558_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X3 a_1716_1633# a_1616_1536# a_1558_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X4 a_2544_1633# a_2444_1536# a_2386_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X5 a_888_561# a_788_473# a_730_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X6 a_1164_561# a_1064_473# a_1006_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X7 a_1440_213# a_1340_125# a_1282_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X8 a_1716_1197# a_1616_1100# a_1558_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X9 a_2544_1197# a_2444_1100# a_2386_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X10 a_2544_561# a_2444_473# a_2386_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X11 a_2268_1633# a_2168_1536# a_2110_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X12 a_1164_213# a_1064_125# a_1006_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X13 a_2820_213# a_2720_125# a_2662_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X14 a_1992_1633# a_1892_1536# a_1834_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X15 a_2268_561# a_2168_473# a_2110_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X16 a_888_213# a_788_125# a_730_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X17 a_2268_1197# a_2168_1100# a_2110_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X18 a_1992_1197# a_1892_1100# a_1834_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X19 a_2544_213# a_2444_125# a_2386_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X20 a_2268_213# a_2168_125# a_2110_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X21 a_612_561# a_512_473# a_454_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X22 a_1440_1633# a_1340_1536# a_1282_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X23 a_1440_1197# a_1340_1100# a_1282_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X24 a_336_561# a_236_473# a_178_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X25 a_1164_1633# a_1064_1536# a_1006_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X26 a_1992_561# a_1892_473# a_1834_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X27 a_612_213# a_512_125# a_454_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X28 a_1164_1197# a_1064_1100# a_1006_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X29 a_336_213# a_236_125# a_178_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X30 a_888_1633# a_788_1536# a_730_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X31 a_1992_213# a_1892_125# a_1834_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X32 a_888_1197# a_788_1100# a_730_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X33 a_612_1633# a_512_1536# a_454_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X34 a_612_1197# a_512_1100# a_454_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X35 a_336_1633# a_236_1536# a_178_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X36 a_1716_561# a_1616_473# a_1558_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+X37 a_2820_1633# a_2720_1536# a_2662_1633# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X38 a_336_1197# a_236_1100# a_178_1197# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.5
+X39 a_1440_561# a_1340_473# a_1282_561# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.1885 pd=1.88 as=0.1885 ps=1.88 w=0.65 l=0.5
+.ends
+
+.subckt passgates x8/EN x5/EN x2/EN x7/UA x4/UA x1/UA x7/EN x4/EN x1/EN x6/UA x3/UA
++ x6/EN x3/EN x8/UA x8/UB x5/UA x8/VDD VSUBS x2/UA
+Xtransistor_quartet_bus10_0 VSUBS x8/VDD x2/EN x5/m1_192_1101# x8/VDD x3/m1_192_1101#
++ x8/UB x8/UB x8/VDD x1/m1_192_1101# x2/UA xdummy1/m1_192_1101# x6/m1_192_1101# x8/UB
++ VSUBS VSUBS VSUBS x7/EN x8/UB x8/UA x6/EN VSUBS x1/m1_192_1101# x8/UB x3/EN x5/EN
++ x5/UA xdummy2/m1_192_1101# x4/m1_192_1101# x5/EN x8/m1_192_1101# x6/EN x1/EN x7/m1_192_1101#
++ x4/m1_192_1101# VSUBS x3/m1_192_1101# x2/m1_192_1101# x3/UA x1/EN VSUBS VSUBS x8/EN
++ x8/UA x8/UB x8/UB VSUBS VSUBS x4/EN x6/UA x7/m1_192_1101# x8/VDD VSUBS x8/EN x7/EN
++ x5/m1_192_1101# VSUBS x8/VDD x4/UA VSUBS VSUBS x7/EN x3/UA x8/m1_192_1101# x4/m1_192_1101#
++ x5/EN VSUBS x7/UA x3/m1_192_1101# x8/UB x2/m1_192_1101# x8/VDD x8/UB x8/UB x8/UB
++ x8/EN VSUBS VSUBS VSUBS x7/UA x2/EN xdummy2/m1_192_1101# x4/EN x8/UB VSUBS x6/m1_192_1101#
++ x3/EN x2/EN VSUBS x8/UB x5/m1_192_1101# VSUBS x1/m1_192_1101# VSUBS VSUBS x8/UB
++ xdummy1/m1_192_1101# x3/EN x8/UB x8/VDD x6/EN x8/VDD VSUBS x2/m1_192_1101# x8/VDD
++ x8/VDD x1/EN x1/UA xdummy2/m1_192_1101# x8/VDD x8/m1_192_1101# x6/UA x5/UA x7/m1_192_1101#
++ x2/UA x4/EN x4/UA x1/UA x6/m1_192_1101# xdummy1/m1_192_1101# VSUBS x8/UB transistor_quartet_bus10
 .ends
 
 .subckt sky130_fd_pr__res_xhigh_po_0p35_EMC64D a_380_3184# a_n1114_n3616# a_n616_3184#
@@ -246,14 +320,14 @@ X24 a_n1280_3184# a_n1280_n3616# VSUBS sky130_fd_pr__res_xhigh_po_0p35 l=32
 X25 a_1210_3184# a_1210_n3616# VSUBS sky130_fd_pr__res_xhigh_po_0p35 l=32
 .ends
 
-.subckt digipot_1hot B U0 U1 U2 U3 U4 U5 U6 U7 U8 U9 U10 U11 U12 U13 U14 U15 passgates_0/a_2908_36#
-+ passgates_1/a_2908_36# passgates_1/x8/VDD A W m1_276_2115# VDD VSS
-Xpassgates_0 U15 U9 U3 passgates_0/x7/UA passgates_0/x4/UA passgates_0/x1/UA passgates_0/a_2908_36#
-+ U13 U7 U1 passgates_0/x6/UA passgates_0/x3/UA U11 U5 VSS passgates_0/x8/UA W passgates_0/x5/UA
-+ VDD passgates_0/x2/UA passgates
-Xpassgates_1 U14 U8 U2 passgates_1/x7/UA passgates_1/x4/UA A passgates_1/a_2908_36#
-+ U12 U6 U0 passgates_1/x6/UA passgates_1/x3/UA U10 U4 VSS passgates_1/x8/UA W passgates_1/x5/UA
-+ passgates_1/x8/VDD passgates_1/x2/UA passgates
+.subckt digipot_1hot B U0 U1 U2 U3 U4 U5 U6 U7 U8 U9 U10 U11 U12 U13 U14 U15 passgates_1/x8/VDD
++ A W m1_276_2115# VDD VSS
+Xpassgates_0 U15 U9 U3 passgates_0/x7/UA passgates_0/x4/UA passgates_0/x1/UA U13 U7
++ U1 passgates_0/x6/UA passgates_0/x3/UA U11 U5 passgates_0/x8/UA W passgates_0/x5/UA
++ VDD VSS passgates_0/x2/UA passgates
+Xpassgates_1 U14 U8 U2 passgates_1/x7/UA passgates_1/x4/UA A U12 U6 U0 passgates_1/x6/UA
++ passgates_1/x3/UA U10 U4 passgates_1/x8/UA W passgates_1/x5/UA passgates_1/x8/VDD
++ VSS passgates_1/x2/UA passgates
 Xsky130_fd_pr__res_xhigh_po_0p35_EMC64D_0 passgates_0/x4/UA m1_1106_2115# passgates_0/x1/UA
 + B m1_940_8915# passgates_1/x3/UA passgates_0/x3/UA passgates_0/x8/UA m1_276_2115#
 + passgates_1/x7/UA A passgates_1/x5/UA passgates_1/x8/UA passgates_0/x8/UA passgates_0/x3/UA
@@ -266,93 +340,115 @@ Xsky130_fd_pr__res_xhigh_po_0p35_EMC64D_0 passgates_0/x4/UA m1_1106_2115# passga
 + m1_940_8915# VSS sky130_fd_pr__res_xhigh_po_0p35_EMC64D
 .ends
 
-.subckt digipot B D0 D1 D2 D3 x2/passgates_1/a_2908_36# x2/m1_276_2115# W decoder4_signed_0/x1[4]/x5/transistor_pair_1/a_88_462#
-+ A x2/passgates_0/a_2908_36# VDD VSS
+.subckt digipot B D0 D1 D2 D3 x2/m1_276_2115# W A VDD VSS
 Xdecoder4_signed_0 x2/U15 x2/U14 x2/U13 x2/U12 x2/U11 x2/U10 D3 x2/U9 D2 x2/U8 D1
-+ x2/U7 D0 x2/U6 x2/U5 x2/U4 x2/U3 x2/U2 x2/U1 x2/U0 decoder4_signed_0/x1[4]/x5/transistor_pair_1/a_88_462#
-+ VDD VSS decoder4_signed
++ x2/U7 D0 x2/U6 x2/U5 x2/U4 x2/U3 x2/U2 x2/U1 x2/U0 VDD VSS decoder4_signed
 Xx2 B x2/U0 x2/U1 x2/U2 x2/U3 x2/U4 x2/U5 x2/U6 x2/U7 x2/U8 x2/U9 x2/U10 x2/U11 x2/U12
-+ x2/U13 x2/U14 x2/U15 x2/passgates_0/a_2908_36# x2/passgates_1/a_2908_36# VDD A W
-+ x2/m1_276_2115# VDD VSS digipot_1hot
++ x2/U13 x2/U14 x2/U15 VDD A W x2/m1_276_2115# VDD VSS digipot_1hot
 .ends
 
-.subckt hybrid_ctrl D0 D1 D2 D3 IN LINE OUT x2/x2/passgates_0/a_2908_36# x2/x2/passgates_1/a_2908_36#
-+ x2/decoder4_signed_0/x1[4]/x5/transistor_pair_1/a_88_462# VSS VDD
+.subckt hybrid_ctrl D0 D1 D2 D3 IN LINE OUT VDD VSS
 Xx1 VDD OUT LINE x2/W VSS opamp
-Xx2 OUT D0 D1 D2 D3 x2/x2/passgates_1/a_2908_36# LINE x2/W x2/decoder4_signed_0/x1[4]/x5/transistor_pair_1/a_88_462#
-+ IN x2/x2/passgates_0/a_2908_36# VDD VSS digipot
+Xx2 OUT D0 D1 D2 D3 LINE x2/W IN VDD VSS digipot
 .ends
 
 .subckt hybrid_ctrl_dnwell hybrid_ctrl_0/D3 hybrid_ctrl_0/D2 hybrid_ctrl_0/D1 hybrid_ctrl_0/LINE
 + hybrid_ctrl_0/D0 hybrid_ctrl_0/IN hybrid_ctrl_0/OUT hybrid_ctrl_0/VSS hybrid_ctrl_0/VDD
 Xhybrid_ctrl_0 hybrid_ctrl_0/D0 hybrid_ctrl_0/D1 hybrid_ctrl_0/D2 hybrid_ctrl_0/D3
-+ hybrid_ctrl_0/IN hybrid_ctrl_0/LINE hybrid_ctrl_0/OUT hybrid_ctrl_0/VSS hybrid_ctrl_0/VSS
-+ hybrid_ctrl_0/VSS hybrid_ctrl_0/VSS hybrid_ctrl_0/VDD hybrid_ctrl
++ hybrid_ctrl_0/IN hybrid_ctrl_0/LINE hybrid_ctrl_0/OUT hybrid_ctrl_0/VDD hybrid_ctrl_0/VSS
++ hybrid_ctrl
 .ends
 
-.subckt shifter_split IN OVDD2 transistor_pair_0/a_88_462# IVDD OUT transistor_pair_1/a_88_462#
-+ OVDD1 inverter_0/transistor_pair_1/a_88_462# VSS2
-Xinverter_0 inverter_0/OUT IVDD inverter_0/transistor_pair_1/a_88_462# IN VSS2 inverter
-Xtransistor_pair_0 IN OVDD1 OVDD1 transistor_pair_0/a_88_462# VSS2 m1_220_1096# OUT
-+ VSS2 m1_220_1096# transistor_pair
-Xtransistor_pair_1 inverter_0/OUT OVDD2 OVDD2 transistor_pair_1/a_88_462# VSS2 OUT
-+ m1_220_1096# VSS2 OUT transistor_pair
+.subckt transistor_pair_bus8 VDD VSS a_788_125# a_2388_849# a_1788_849# a_1018_849#
++ a_488_752# a_188_125# a_1188_849# a_418_849# a_2218_213# a_588_849# a_1618_213#
++ a_2388_213# a_1788_213# a_1018_213# a_1188_213# a_418_213# a_2288_125# a_1988_752#
++ a_1688_125# a_588_213# a_1918_849# a_1388_752# a_1088_125# a_1318_849# a_788_752#
++ a_488_125# a_2088_849# a_1488_849# a_718_849# a_188_752# a_888_849# a_118_849# a_1918_213#
++ a_1318_213# a_288_849# a_2088_213# a_1488_213# a_718_213# a_1988_125# a_2288_752#
++ a_888_213# a_118_213# a_1688_752# a_1388_125# a_2218_849# a_288_213# a_1618_849#
++ a_1088_752#
+X0 a_2088_849# a_1988_752# a_1918_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X1 a_288_213# a_188_125# a_118_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X2 a_588_213# a_488_125# a_418_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X3 a_888_213# a_788_125# a_718_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X4 a_288_849# a_188_752# a_118_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X5 a_588_849# a_488_752# a_418_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X6 a_1188_213# a_1088_125# a_1018_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X7 a_888_849# a_788_752# a_718_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X8 a_1488_213# a_1388_125# a_1318_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X9 a_2388_213# a_2288_125# a_2218_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X10 a_1788_213# a_1688_125# a_1618_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X11 a_1188_849# a_1088_752# a_1018_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X12 a_2088_213# a_1988_125# a_1918_213# VSS sky130_fd_pr__nfet_g5v0d10v5 ad=0.2275 pd=2 as=0.2275 ps=2 w=0.65 l=0.5
+X13 a_1488_849# a_1388_752# a_1318_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X14 a_2388_849# a_2288_752# a_2218_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
+X15 a_1788_849# a_1688_752# a_1618_849# VDD sky130_fd_pr__pfet_g5v0d10v5 ad=0.35 pd=2.7 as=0.35 ps=2.7 w=1 l=0.5
 .ends
 
 .subckt shifters_split shifter_split_1[2]/OUT shifter_split_1[0]/IN shifter_split_1[7]/IN
-+ shifter_split_1[4]/IN shifter_split_1[3]/OUT shifter_split_1[1]/IN shifter_split_1[6]/OUT
++ shifter_split_1[6]/OUT shifter_split_1[4]/IN shifter_split_1[3]/OUT shifter_split_1[1]/IN
 + shifter_split_1[0]/OUT shifter_split_1[5]/IN shifter_split_1[7]/OUT shifter_split_1[4]/OUT
-+ shifter_split_1[1]/inverter_0/transistor_pair_1/a_88_462# shifter_split_1[1]/OUT
-+ VSUBS shifter_split_1[2]/IN shifter_split_1[7]/IVDD shifter_split_1[6]/IN shifter_split_1[7]/OVDD1
-+ shifter_split_1[7]/OVDD2 shifter_split_1[5]/OUT shifter_split_1[3]/IN
-Xshifter_split_1[0] shifter_split_1[0]/IN shifter_split_1[7]/OVDD2 VSUBS shifter_split_1[7]/IVDD
-+ shifter_split_1[0]/OUT VSUBS shifter_split_1[7]/OVDD1 VSUBS VSUBS shifter_split
-Xshifter_split_1[1] shifter_split_1[1]/IN shifter_split_1[7]/OVDD2 shifter_split_1[1]/transistor_pair_0/a_88_462#
-+ shifter_split_1[7]/IVDD shifter_split_1[1]/OUT shifter_split_1[1]/transistor_pair_1/a_88_462#
-+ shifter_split_1[7]/OVDD1 shifter_split_1[1]/inverter_0/transistor_pair_1/a_88_462#
-+ VSUBS shifter_split
-Xshifter_split_1[2] shifter_split_1[2]/IN shifter_split_1[7]/OVDD2 shifter_split_1[2]/transistor_pair_0/a_88_462#
-+ shifter_split_1[7]/IVDD shifter_split_1[2]/OUT shifter_split_1[2]/transistor_pair_1/a_88_462#
-+ shifter_split_1[7]/OVDD1 shifter_split_1[2]/inverter_0/transistor_pair_1/a_88_462#
-+ VSUBS shifter_split
-Xshifter_split_1[3] shifter_split_1[3]/IN shifter_split_1[7]/OVDD2 shifter_split_1[3]/transistor_pair_0/a_88_462#
-+ shifter_split_1[7]/IVDD shifter_split_1[3]/OUT shifter_split_1[3]/transistor_pair_1/a_88_462#
-+ shifter_split_1[7]/OVDD1 shifter_split_1[3]/inverter_0/transistor_pair_1/a_88_462#
-+ VSUBS shifter_split
-Xshifter_split_1[4] shifter_split_1[4]/IN shifter_split_1[7]/OVDD2 shifter_split_1[4]/transistor_pair_0/a_88_462#
-+ shifter_split_1[7]/IVDD shifter_split_1[4]/OUT shifter_split_1[4]/transistor_pair_1/a_88_462#
-+ shifter_split_1[7]/OVDD1 shifter_split_1[4]/inverter_0/transistor_pair_1/a_88_462#
-+ VSUBS shifter_split
-Xshifter_split_1[5] shifter_split_1[5]/IN shifter_split_1[7]/OVDD2 shifter_split_1[5]/transistor_pair_0/a_88_462#
-+ shifter_split_1[7]/IVDD shifter_split_1[5]/OUT shifter_split_1[5]/transistor_pair_1/a_88_462#
-+ shifter_split_1[7]/OVDD1 shifter_split_1[5]/inverter_0/transistor_pair_1/a_88_462#
-+ VSUBS shifter_split
-Xshifter_split_1[6] shifter_split_1[6]/IN shifter_split_1[7]/OVDD2 shifter_split_1[6]/transistor_pair_0/a_88_462#
-+ shifter_split_1[7]/IVDD shifter_split_1[6]/OUT shifter_split_1[6]/transistor_pair_1/a_88_462#
-+ shifter_split_1[7]/OVDD1 shifter_split_1[6]/inverter_0/transistor_pair_1/a_88_462#
-+ VSUBS shifter_split
-Xshifter_split_1[7] shifter_split_1[7]/IN shifter_split_1[7]/OVDD2 shifter_split_1[7]/transistor_pair_0/a_88_462#
-+ shifter_split_1[7]/IVDD shifter_split_1[7]/OUT shifter_split_1[7]/transistor_pair_1/a_88_462#
-+ shifter_split_1[7]/OVDD1 shifter_split_1[7]/inverter_0/transistor_pair_1/a_88_462#
-+ VSUBS shifter_split
++ shifter_split_1[1]/OUT shifter_split_1[2]/IN VSUBS shifter_split_1[7]/OVDD2 shifter_split_1[7]/OVDD1
++ shifter_split_1[7]/IVDD shifter_split_1[6]/IN shifter_split_1[5]/OUT shifter_split_1[3]/IN
+Xtransistor_pair_bus8_0 shifter_split_1[7]/OVDD2 VSUBS shifter_split_1[2]/inverter_0/OUT
++ shifter_split_1[7]/OUT shifter_split_1[5]/OUT shifter_split_1[7]/OVDD2 shifter_split_1[1]/m1_220_1096#
++ shifter_split_1[0]/inverter_0/OUT shifter_split_1[3]/OUT shifter_split_1[7]/OVDD2
++ VSUBS shifter_split_1[1]/OUT VSUBS shifter_split_1[7]/OUT shifter_split_1[5]/OUT
++ VSUBS shifter_split_1[3]/OUT VSUBS shifter_split_1[7]/inverter_0/OUT shifter_split_1[6]/m1_220_1096#
++ shifter_split_1[5]/inverter_0/OUT shifter_split_1[1]/OUT shifter_split_1[7]/OVDD2
++ shifter_split_1[4]/m1_220_1096# shifter_split_1[3]/inverter_0/OUT shifter_split_1[7]/OVDD2
++ shifter_split_1[2]/m1_220_1096# shifter_split_1[1]/inverter_0/OUT shifter_split_1[6]/OUT
++ shifter_split_1[4]/OUT shifter_split_1[7]/OVDD2 shifter_split_1[0]/m1_220_1096#
++ shifter_split_1[2]/OUT shifter_split_1[7]/OVDD2 VSUBS VSUBS shifter_split_1[0]/OUT
++ shifter_split_1[6]/OUT shifter_split_1[4]/OUT VSUBS shifter_split_1[6]/inverter_0/OUT
++ shifter_split_1[7]/m1_220_1096# shifter_split_1[2]/OUT VSUBS shifter_split_1[5]/m1_220_1096#
++ shifter_split_1[4]/inverter_0/OUT shifter_split_1[7]/OVDD2 shifter_split_1[0]/OUT
++ shifter_split_1[7]/OVDD2 shifter_split_1[3]/m1_220_1096# transistor_pair_bus8
+Xtransistor_pair_bus8_1 shifter_split_1[7]/OVDD1 VSUBS shifter_split_1[2]/IN shifter_split_1[7]/m1_220_1096#
++ shifter_split_1[5]/m1_220_1096# shifter_split_1[7]/OVDD1 shifter_split_1[1]/OUT
++ shifter_split_1[0]/IN shifter_split_1[3]/m1_220_1096# shifter_split_1[7]/OVDD1 VSUBS
++ shifter_split_1[1]/m1_220_1096# VSUBS shifter_split_1[7]/m1_220_1096# shifter_split_1[5]/m1_220_1096#
++ VSUBS shifter_split_1[3]/m1_220_1096# VSUBS shifter_split_1[7]/IN shifter_split_1[6]/OUT
++ shifter_split_1[5]/IN shifter_split_1[1]/m1_220_1096# shifter_split_1[7]/OVDD1 shifter_split_1[4]/OUT
++ shifter_split_1[3]/IN shifter_split_1[7]/OVDD1 shifter_split_1[2]/OUT shifter_split_1[1]/IN
++ shifter_split_1[6]/m1_220_1096# shifter_split_1[4]/m1_220_1096# shifter_split_1[7]/OVDD1
++ shifter_split_1[0]/OUT shifter_split_1[2]/m1_220_1096# shifter_split_1[7]/OVDD1
++ VSUBS VSUBS shifter_split_1[0]/m1_220_1096# shifter_split_1[6]/m1_220_1096# shifter_split_1[4]/m1_220_1096#
++ VSUBS shifter_split_1[6]/IN shifter_split_1[7]/OUT shifter_split_1[2]/m1_220_1096#
++ VSUBS shifter_split_1[5]/OUT shifter_split_1[4]/IN shifter_split_1[7]/OVDD1 shifter_split_1[0]/m1_220_1096#
++ shifter_split_1[7]/OVDD1 shifter_split_1[3]/OUT transistor_pair_bus8
+Xtransistor_pair_bus8_2 shifter_split_1[7]/IVDD VSUBS shifter_split_1[2]/IN shifter_split_1[7]/inverter_0/OUT
++ shifter_split_1[5]/inverter_0/OUT shifter_split_1[7]/IVDD shifter_split_1[1]/IN
++ shifter_split_1[0]/IN shifter_split_1[3]/inverter_0/OUT shifter_split_1[7]/IVDD
++ VSUBS shifter_split_1[1]/inverter_0/OUT VSUBS shifter_split_1[7]/inverter_0/OUT
++ shifter_split_1[5]/inverter_0/OUT VSUBS shifter_split_1[3]/inverter_0/OUT VSUBS
++ shifter_split_1[7]/IN shifter_split_1[6]/IN shifter_split_1[5]/IN shifter_split_1[1]/inverter_0/OUT
++ shifter_split_1[7]/IVDD shifter_split_1[4]/IN shifter_split_1[3]/IN shifter_split_1[7]/IVDD
++ shifter_split_1[2]/IN shifter_split_1[1]/IN shifter_split_1[6]/inverter_0/OUT shifter_split_1[4]/inverter_0/OUT
++ shifter_split_1[7]/IVDD shifter_split_1[0]/IN shifter_split_1[2]/inverter_0/OUT
++ shifter_split_1[7]/IVDD VSUBS VSUBS shifter_split_1[0]/inverter_0/OUT shifter_split_1[6]/inverter_0/OUT
++ shifter_split_1[4]/inverter_0/OUT VSUBS shifter_split_1[6]/IN shifter_split_1[7]/IN
++ shifter_split_1[2]/inverter_0/OUT VSUBS shifter_split_1[5]/IN shifter_split_1[4]/IN
++ shifter_split_1[7]/IVDD shifter_split_1[0]/inverter_0/OUT shifter_split_1[7]/IVDD
++ shifter_split_1[3]/IN transistor_pair_bus8
 .ends
 
 .subckt shifters_dnwell shifters_split_0/shifter_split_1[5]/OUT shifters_split_0/shifter_split_1[6]/IN
 + shifters_split_0/shifter_split_1[2]/OUT shifters_split_0/shifter_split_1[3]/IN shifters_split_0/shifter_split_1[0]/IN
-+ shifters_split_0/shifter_split_1[3]/OUT shifters_split_0/shifter_split_1[7]/IN shifters_split_0/shifter_split_1[4]/IN
-+ shifters_split_0/shifter_split_1[0]/OUT shifters_split_0/shifter_split_1[6]/OUT
-+ shifters_split_0/shifter_split_1[1]/IN shifters_split_0/shifter_split_1[7]/OUT shifters_split_0/shifter_split_1[4]/OUT
-+ shifters_split_0/shifter_split_1[5]/IN shifters_split_0/shifter_split_1[1]/OUT shifters_split_0/shifter_split_1[7]/OVDD2
-+ shifters_split_0/shifter_split_1[2]/IN shifters_split_0/VSUBS shifters_split_0/shifter_split_1[7]/IVDD
++ shifters_split_0/shifter_split_1[3]/OUT shifters_split_0/shifter_split_1[7]/IN shifters_split_0/shifter_split_1[0]/OUT
++ shifters_split_0/shifter_split_1[4]/IN shifters_split_0/shifter_split_1[1]/IN shifters_split_0/shifter_split_1[6]/OUT
++ shifters_split_0/shifter_split_1[7]/OUT shifters_split_0/shifter_split_1[4]/OUT
++ shifters_split_0/shifter_split_1[7]/OVDD2 shifters_split_0/shifter_split_1[5]/IN
++ shifters_split_0/shifter_split_1[1]/OUT shifters_split_0/shifter_split_1[2]/IN shifters_split_0/VSUBS
++ shifters_split_0/shifter_split_1[7]/IVDD
 Xshifters_split_0 shifters_split_0/shifter_split_1[2]/OUT shifters_split_0/shifter_split_1[0]/IN
-+ shifters_split_0/shifter_split_1[7]/IN shifters_split_0/shifter_split_1[4]/IN shifters_split_0/shifter_split_1[3]/OUT
-+ shifters_split_0/shifter_split_1[1]/IN shifters_split_0/shifter_split_1[6]/OUT shifters_split_0/shifter_split_1[0]/OUT
++ shifters_split_0/shifter_split_1[7]/IN shifters_split_0/shifter_split_1[6]/OUT shifters_split_0/shifter_split_1[4]/IN
++ shifters_split_0/shifter_split_1[3]/OUT shifters_split_0/shifter_split_1[1]/IN shifters_split_0/shifter_split_1[0]/OUT
 + shifters_split_0/shifter_split_1[5]/IN shifters_split_0/shifter_split_1[7]/OUT shifters_split_0/shifter_split_1[4]/OUT
-+ shifters_split_0/VSUBS shifters_split_0/shifter_split_1[1]/OUT shifters_split_0/VSUBS
-+ shifters_split_0/shifter_split_1[2]/IN shifters_split_0/shifter_split_1[7]/IVDD
-+ shifters_split_0/shifter_split_1[6]/IN shifters_split_0/shifter_split_1[7]/OVDD2
-+ shifters_split_0/shifter_split_1[7]/OVDD2 shifters_split_0/shifter_split_1[5]/OUT
-+ shifters_split_0/shifter_split_1[3]/IN shifters_split
++ shifters_split_0/shifter_split_1[1]/OUT shifters_split_0/shifter_split_1[2]/IN shifters_split_0/VSUBS
++ shifters_split_0/shifter_split_1[7]/OVDD2 shifters_split_0/shifter_split_1[7]/OVDD2
++ shifters_split_0/shifter_split_1[7]/IVDD shifters_split_0/shifter_split_1[6]/IN
++ shifters_split_0/shifter_split_1[5]/OUT shifters_split_0/shifter_split_1[3]/IN shifters_split
 .ends
 
 .subckt decoder4_signed_dnwell decoder4_signed_0/U3 decoder4_signed_0/U2 decoder4_signed_0/U15
@@ -360,35 +456,35 @@ Xshifters_split_0 shifters_split_0/shifter_split_1[2]/OUT shifters_split_0/shift
 + decoder4_signed_0/U12 decoder4_signed_0/U11 decoder4_signed_0/U10 decoder4_signed_0/D3
 + decoder4_signed_0/D2 decoder4_signed_0/D1 decoder4_signed_0/D0 decoder4_signed_0/U9
 + decoder4_signed_0/U8 decoder4_signed_0/U7 decoder4_signed_0/U6 decoder4_signed_0/U5
-+ decoder4_signed_0/VSS decoder4_signed_0/VDD decoder4_signed_0/U4
++ decoder4_signed_0/U4 decoder4_signed_0/VSS decoder4_signed_0/VDD
 Xdecoder4_signed_0 decoder4_signed_0/U15 decoder4_signed_0/U14 decoder4_signed_0/U13
 + decoder4_signed_0/U12 decoder4_signed_0/U11 decoder4_signed_0/U10 decoder4_signed_0/D3
 + decoder4_signed_0/U9 decoder4_signed_0/D2 decoder4_signed_0/U8 decoder4_signed_0/D1
 + decoder4_signed_0/U7 decoder4_signed_0/D0 decoder4_signed_0/U6 decoder4_signed_0/U5
 + decoder4_signed_0/U4 decoder4_signed_0/U3 decoder4_signed_0/U2 decoder4_signed_0/U1
-+ decoder4_signed_0/U0 decoder4_signed_0/x1[4]/x5/transistor_pair_1/a_88_462# decoder4_signed_0/VDD
-+ decoder4_signed_0/VSS decoder4_signed
++ decoder4_signed_0/U0 decoder4_signed_0/VDD decoder4_signed_0/VSS decoder4_signed
 .ends
 
 .subckt toplevel clk ena rst_n uio_in[0] uio_in[1] uio_in[2] uio_in[3] uio_in[4] uio_in[5]
-+ uio_in[6] uio_in[7] uio_oe[1] uio_oe[4] uio_oe[7] uo_out[2] uo_out[3] uo_out[5]
-+ uo_out[6] uo_out[7] passgate_dnwell_0/passgate_single_0/passgate_0/VDD m1_0_44952#
-+ shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/IVDD shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/OVDD2
-+ passgate_dnwell_0/passgate_single_0/passgate_0/VSS uio_oe[0] ui_in[1] ui_in[2] uio_oe[3]
-+ ui_in[4] ui_in[5] ui_in[0] uio_oe[6] uo_out[4] ua[0] ui_in[7] uio_out[1] ua[1] shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/IVDD
-+ m1_28872_0# ui_in[3] shifters_dnwell_2/shifters_split_0/VSUBS uo_out[1] uio_out[2]
-+ ua[2] uio_out[0] m1_28872_44952# uio_out[3] ua[3] uo_out[0] uio_out[4] ua[4] ui_in[6]
-+ tie_highs_dnwell_0/tie_highs_0/VSUBS tie_highs_dnwell_0/tie_highs_0/tie_high_1[7]/VDD
-+ uio_out[5] ua[5] uio_out[6] ua[6] shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/OVDD2
-+ m1_0_0# shifters_dnwell_0/shifters_split_0/VSUBS uio_oe[2] ua[7] hybrid_dnwell_0/hybrid_0/VSS
-+ hybrid_dnwell_0/hybrid_0/VDD uio_out[7] hybrid_ctrl_dnwell_0/hybrid_ctrl_0/VSS decoder4_signed_dnwell_0/decoder4_signed_0/VSS
-+ shifters_dnwell_3/shifters_split_0/VSUBS hybrid_ctrl_dnwell_0/hybrid_ctrl_0/VDD
++ uio_in[6] uio_in[7] uio_oe[1] uio_oe[4] uio_oe[7] uo_out[0] uo_out[2] uo_out[3]
++ uo_out[5] uo_out[6] uo_out[7] m1_0_44952# shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/IVDD
++ passgate_dnwell_0/passgate_single_0/VSUBS passgate_dnwell_0/passgate_single_0/passgate_0/VDD
++ uio_oe[0] ui_in[1] ui_in[2] uio_oe[3] ui_in[4] ui_in[5] ui_in[0] uio_oe[6] uo_out[4]
++ ua[0] ui_in[7] uio_out[1] ua[1] shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/IVDD
++ shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/OVDD2 m1_28872_0# ui_in[3]
++ shifters_dnwell_2/shifters_split_0/VSUBS uo_out[1] uio_out[2] ua[2] uio_out[0] m1_28872_44952#
++ uio_out[3] ua[3] uio_out[4] ua[4] ui_in[6] tie_highs_dnwell_0/tie_highs_0/VSUBS
++ tie_highs_dnwell_0/tie_highs_0/tie_high_1[7]/VDD uio_out[5] ua[5] uio_out[6] ua[6]
++ shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/OVDD2 m1_0_0# shifters_dnwell_0/shifters_split_0/VSUBS
++ uio_oe[2] ua[7] hybrid_dnwell_0/hybrid_0/VSS hybrid_dnwell_0/hybrid_0/VDD uio_out[7]
++ shifters_dnwell_3/shifters_split_0/VSUBS hybrid_ctrl_dnwell_0/hybrid_ctrl_0/VSS
++ decoder4_signed_dnwell_0/decoder4_signed_0/VSS hybrid_ctrl_dnwell_0/hybrid_ctrl_0/VDD
 + decoder4_signed_dnwell_0/decoder4_signed_0/VDD shifters_dnwell_0/shifters_split_0/shifter_split_1[7]/IVDD
 + shifters_dnwell_0/shifters_split_0/shifter_split_1[7]/OVDD2 uio_oe[5]
 Xtie_highs_dnwell_0 uio_oe[0] uio_oe[3] uio_oe[6] uio_oe[2] uio_oe[5] uio_oe[1] uio_oe[4]
 + uio_oe[7] tie_highs_dnwell_0/tie_highs_0/VSUBS tie_highs_dnwell_0/tie_highs_0/tie_high_1[7]/VDD
 + tie_highs_dnwell
-Xpassgate_dnwell_0 ua[3] ua[2] decoder4_signed_dnwell_0/decoder4_signed_0/D0 passgate_dnwell_0/passgate_single_0/passgate_0/VSS
+Xpassgate_dnwell_0 ua[3] ua[2] decoder4_signed_dnwell_0/decoder4_signed_0/D0 passgate_dnwell_0/passgate_single_0/VSUBS
 + passgate_dnwell_0/passgate_single_0/passgate_0/VDD passgate_dnwell
 Xhybrid_dnwell_0 ua[0] ua[2] hybrid_dnwell_0/hybrid_0/VSS hybrid_dnwell_0/hybrid_0/VDD
 + ua[1] hybrid_dnwell
@@ -398,25 +494,24 @@ Xhybrid_ctrl_dnwell_0 hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D3 hybrid_ctrl_dnwell_0
 + hybrid_ctrl_dnwell
 Xshifters_dnwell_0 uio_out[5] decoder4_signed_dnwell_0/decoder4_signed_0/U14 uio_out[2]
 + decoder4_signed_dnwell_0/decoder4_signed_0/U11 decoder4_signed_dnwell_0/decoder4_signed_0/U8
-+ uio_out[3] decoder4_signed_dnwell_0/decoder4_signed_0/U15 decoder4_signed_dnwell_0/decoder4_signed_0/U12
-+ uio_out[0] uio_out[6] decoder4_signed_dnwell_0/decoder4_signed_0/U9 uio_out[7] uio_out[4]
-+ decoder4_signed_dnwell_0/decoder4_signed_0/U13 uio_out[1] shifters_dnwell_0/shifters_split_0/shifter_split_1[7]/OVDD2
-+ decoder4_signed_dnwell_0/decoder4_signed_0/U10 shifters_dnwell_0/shifters_split_0/VSUBS
-+ shifters_dnwell_0/shifters_split_0/shifter_split_1[7]/IVDD shifters_dnwell
++ uio_out[3] decoder4_signed_dnwell_0/decoder4_signed_0/U15 uio_out[0] decoder4_signed_dnwell_0/decoder4_signed_0/U12
++ decoder4_signed_dnwell_0/decoder4_signed_0/U9 uio_out[6] uio_out[7] uio_out[4] shifters_dnwell_0/shifters_split_0/shifter_split_1[7]/OVDD2
++ decoder4_signed_dnwell_0/decoder4_signed_0/U13 uio_out[1] decoder4_signed_dnwell_0/decoder4_signed_0/U10
++ shifters_dnwell_0/shifters_split_0/VSUBS shifters_dnwell_0/shifters_split_0/shifter_split_1[7]/IVDD
++ shifters_dnwell
 Xshifters_dnwell_2 uo_out[5] decoder4_signed_dnwell_0/decoder4_signed_0/U6 uo_out[2]
 + decoder4_signed_dnwell_0/decoder4_signed_0/U3 decoder4_signed_dnwell_0/decoder4_signed_0/U0
-+ uo_out[3] decoder4_signed_dnwell_0/decoder4_signed_0/U7 decoder4_signed_dnwell_0/decoder4_signed_0/U4
-+ uo_out[0] uo_out[6] decoder4_signed_dnwell_0/decoder4_signed_0/U1 uo_out[7] uo_out[4]
-+ decoder4_signed_dnwell_0/decoder4_signed_0/U5 uo_out[1] shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/OVDD2
-+ decoder4_signed_dnwell_0/decoder4_signed_0/U2 shifters_dnwell_2/shifters_split_0/VSUBS
-+ shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/IVDD shifters_dnwell
-Xshifters_dnwell_3 hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D2 ui_in[1] decoder4_signed_dnwell_0/decoder4_signed_0/D1
-+ ui_in[4] ui_in[7] decoder4_signed_dnwell_0/decoder4_signed_0/D0 ui_in[0] ui_in[3]
-+ decoder4_signed_dnwell_0/decoder4_signed_0/D3 hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D1
-+ ui_in[6] hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D0 hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D3
-+ ui_in[2] decoder4_signed_dnwell_0/decoder4_signed_0/D2 shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/OVDD2
-+ ui_in[5] shifters_dnwell_3/shifters_split_0/VSUBS shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/IVDD
++ uo_out[3] decoder4_signed_dnwell_0/decoder4_signed_0/U7 uo_out[0] decoder4_signed_dnwell_0/decoder4_signed_0/U4
++ decoder4_signed_dnwell_0/decoder4_signed_0/U1 uo_out[6] uo_out[7] uo_out[4] shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/OVDD2
++ decoder4_signed_dnwell_0/decoder4_signed_0/U5 uo_out[1] decoder4_signed_dnwell_0/decoder4_signed_0/U2
++ shifters_dnwell_2/shifters_split_0/VSUBS shifters_dnwell_2/shifters_split_0/shifter_split_1[7]/IVDD
 + shifters_dnwell
+Xshifters_dnwell_3 hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D2 ui_in[1] decoder4_signed_dnwell_0/decoder4_signed_0/D1
++ ui_in[4] ui_in[7] decoder4_signed_dnwell_0/decoder4_signed_0/D0 ui_in[0] decoder4_signed_dnwell_0/decoder4_signed_0/D3
++ ui_in[3] ui_in[6] hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D1 hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D0
++ hybrid_ctrl_dnwell_0/hybrid_ctrl_0/D3 shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/OVDD2
++ ui_in[2] decoder4_signed_dnwell_0/decoder4_signed_0/D2 ui_in[5] shifters_dnwell_3/shifters_split_0/VSUBS
++ shifters_dnwell_3/shifters_split_0/shifter_split_1[7]/IVDD shifters_dnwell
 Xdecoder4_signed_dnwell_0 decoder4_signed_dnwell_0/decoder4_signed_0/U3 decoder4_signed_dnwell_0/decoder4_signed_0/U2
 + decoder4_signed_dnwell_0/decoder4_signed_0/U15 decoder4_signed_dnwell_0/decoder4_signed_0/U1
 + decoder4_signed_dnwell_0/decoder4_signed_0/U13 decoder4_signed_dnwell_0/decoder4_signed_0/U14
@@ -426,8 +521,8 @@ Xdecoder4_signed_dnwell_0 decoder4_signed_dnwell_0/decoder4_signed_0/U3 decoder4
 + decoder4_signed_dnwell_0/decoder4_signed_0/D1 decoder4_signed_dnwell_0/decoder4_signed_0/D0
 + decoder4_signed_dnwell_0/decoder4_signed_0/U9 decoder4_signed_dnwell_0/decoder4_signed_0/U8
 + decoder4_signed_dnwell_0/decoder4_signed_0/U7 decoder4_signed_dnwell_0/decoder4_signed_0/U6
-+ decoder4_signed_dnwell_0/decoder4_signed_0/U5 decoder4_signed_dnwell_0/decoder4_signed_0/VSS
-+ decoder4_signed_dnwell_0/decoder4_signed_0/VDD decoder4_signed_dnwell_0/decoder4_signed_0/U4
++ decoder4_signed_dnwell_0/decoder4_signed_0/U5 decoder4_signed_dnwell_0/decoder4_signed_0/U4
++ decoder4_signed_dnwell_0/decoder4_signed_0/VSS decoder4_signed_dnwell_0/decoder4_signed_0/VDD
 + decoder4_signed_dnwell
 .ends
 
@@ -436,19 +531,19 @@ Xdecoder4_signed_dnwell_0 decoder4_signed_dnwell_0/decoder4_signed_0/U3 decoder4
 + uio_in[1] uo_out[3] uio_oe[5] uio_oe[4] ua[3] ui_in[6] uo_out[4] uio_in[2] uio_oe[6]
 + uo_out[1] ua[4] ui_in[7] m1_28872_0# uio_in[3] uio_out[0] m1_28872_44952# ua[5]
 + uio_out[1] uo_out[6] uio_in[4] uio_oe[7] ua[6] uio_in[5] uo_out[7] uio_out[2] ua[7]
-+ uio_out[3] uio_in[6] power_routing_0/VAPWR uio_in[7] uio_out[5] m1_0_0# ui_in[2]
-+ uio_out[6] ena uio_oe[0] uio_out[7] uo_out[5] power_routing_0/VGND uio_out[4] power_routing_0/VDPWR
++ uio_out[3] uio_in[6] uio_in[7] uio_out[5] m1_0_0# ui_in[2] uio_out[6] power_routing_0/VAPWR
++ ena uio_oe[0] uio_out[7] uo_out[5] power_routing_0/VGND uio_out[4] power_routing_0/VDPWR
 Xtoplevel_0 clk ena rst_n uio_in[0] uio_in[1] uio_in[2] uio_in[3] uio_in[4] uio_in[5]
-+ uio_in[6] uio_in[7] uio_oe[1] uio_oe[4] uio_oe[7] uo_out[2] uo_out[3] uo_out[5]
-+ uo_out[6] uo_out[7] power_routing_0/VAPWR m1_0_44952# power_routing_0/VDPWR power_routing_0/VDPWR
-+ power_routing_0/VGND uio_oe[0] ui_in[1] ui_in[2] uio_oe[3] ui_in[4] ui_in[5] ui_in[0]
-+ uio_oe[6] uo_out[4] ua[0] ui_in[7] uio_out[1] ua[1] power_routing_0/VAPWR m1_28872_0#
-+ ui_in[3] power_routing_0/VGND uo_out[1] uio_out[2] ua[2] uio_out[0] m1_28872_44952#
-+ uio_out[3] ua[3] uo_out[0] uio_out[4] ua[4] ui_in[6] power_routing_0/VGND power_routing_0/VDPWR
-+ uio_out[5] ua[5] uio_out[6] ua[6] power_routing_0/VAPWR m1_0_0# power_routing_0/VGND
-+ uio_oe[2] ua[7] power_routing_0/VGND power_routing_0/VAPWR uio_out[7] power_routing_0/VGND
-+ power_routing_0/VGND power_routing_0/VGND power_routing_0/VAPWR power_routing_0/VAPWR
-+ power_routing_0/VAPWR power_routing_0/VDPWR uio_oe[5] toplevel
++ uio_in[6] uio_in[7] uio_oe[1] uio_oe[4] uio_oe[7] uo_out[0] uo_out[2] uo_out[3]
++ uo_out[5] uo_out[6] uo_out[7] m1_0_44952# power_routing_0/VDPWR power_routing_0/VGND
++ power_routing_0/VAPWR uio_oe[0] ui_in[1] ui_in[2] uio_oe[3] ui_in[4] ui_in[5] ui_in[0]
++ uio_oe[6] uo_out[4] ua[0] ui_in[7] uio_out[1] ua[1] power_routing_0/VAPWR power_routing_0/VDPWR
++ m1_28872_0# ui_in[3] power_routing_0/VGND uo_out[1] uio_out[2] ua[2] uio_out[0]
++ m1_28872_44952# uio_out[3] ua[3] uio_out[4] ua[4] ui_in[6] power_routing_0/VGND
++ power_routing_0/VDPWR uio_out[5] ua[5] uio_out[6] ua[6] power_routing_0/VAPWR m1_0_0#
++ power_routing_0/VGND uio_oe[2] ua[7] power_routing_0/VGND power_routing_0/VAPWR
++ uio_out[7] power_routing_0/VGND power_routing_0/VGND power_routing_0/VGND power_routing_0/VAPWR
++ power_routing_0/VAPWR power_routing_0/VAPWR power_routing_0/VDPWR uio_oe[5] toplevel
 .ends
 
 .subckt tt_um_htfab_hybrid clk ena rst_n ua[0] ua[1] ua[2] ua[3] ua[4] ua[5] ua[6]
@@ -463,7 +558,7 @@ Xtoplevel_power_0 clk rst_n m1_0_44952# ui_in[0] ui_in[1] uo_out[0] uio_oe[2] ui
 + uo_out[3] uio_oe[5] uio_oe[4] ua[3] ui_in[6] uo_out[4] uio_in[2] uio_oe[6] uo_out[1]
 + ua[4] ui_in[7] m1_28872_0# uio_in[3] uio_out[0] m1_28872_44952# ua[5] uio_out[1]
 + uo_out[6] uio_in[4] uio_oe[7] ua[6] uio_in[5] uo_out[7] uio_out[2] ua[7] uio_out[3]
-+ uio_in[6] VAPWR uio_in[7] uio_out[5] m1_0_0# ui_in[2] uio_out[6] ena uio_oe[0] uio_out[7]
++ uio_in[6] uio_in[7] uio_out[5] m1_0_0# ui_in[2] uio_out[6] VAPWR ena uio_oe[0] uio_out[7]
 + uo_out[5] VGND uio_out[4] VDPWR toplevel_power
 .ends
 
