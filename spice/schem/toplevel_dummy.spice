@@ -1,0 +1,274 @@
+** sch_path: /home/htamas/progs/hybrid/xschem/toplevel_dummy.sch
+.subckt toplevel_dummy ena clk rst_n ui_in[7] ui_in[6] ui_in[5] ui_in[4] ui_in[3] ui_in[2] ui_in[1] ui_in[0] uio_in[7] uio_in[6]
++ uio_in[5] uio_in[4] uio_in[3] uio_in[2] uio_in[1] uio_in[0] uo_out[7] uo_out[6] uo_out[5] uo_out[4] uo_out[3] uo_out[2] uo_out[1] uo_out[0]
++ uio_out[7] uio_out[6] uio_out[5] uio_out[4] uio_out[3] uio_out[2] uio_out[1] uio_out[0] uio_oe[7] uio_oe[6] uio_oe[5] uio_oe[4] uio_oe[3]
++ uio_oe[2] uio_oe[1] uio_oe[0] VAPWR VDPWR VGND ua[5] ua[4] ua[3] ua[2] ua[1] ua[0] ua[7] ua[6]
+*.PININFO ena:I clk:I rst_n:I ui_in[7:0]:I uio_in[7:0]:I uo_out[7:0]:O uio_out[7:0]:O uio_oe[7:0]:O VAPWR:B VDPWR:B VGND:B
+*+ ua[5:0]:B ua[7:6]:B
+* noconn ena
+* noconn clk
+* noconn rst_n
+* noconn uio_in[7:0]
+* noconn ua[7:6]
+xdi[9] VAPWR VGND net1[9] VGND inverter
+xdi[8] VAPWR VGND net1[8] VGND inverter
+xdi[7] VAPWR VGND net1[7] VGND inverter
+xdi[6] VAPWR VGND net1[6] VGND inverter
+xdi[5] VAPWR VGND net1[5] VGND inverter
+xdi[4] VAPWR VGND net1[4] VGND inverter
+xdi[3] VAPWR VGND net1[3] VGND inverter
+xdi[2] VAPWR VGND net1[2] VGND inverter
+xdi[1] VAPWR VGND net1[1] VGND inverter
+xdi[0] VAPWR VGND net1[0] VGND inverter
+xdummy[3] VAPWR VGND VGND VGND VGND passgate
+xdummy[2] VAPWR VGND VGND VGND VGND passgate
+xdummy[1] VAPWR VGND VGND VGND VGND passgate
+xdummy[0] VAPWR VGND VGND VGND VGND passgate
+XRdummy[1] net2[1] net3[1] VGND sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XRdummy[0] net2[0] net3[0] VGND sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x1 uo_out[7] uo_out[6] uo_out[5] uo_out[4] uo_out[3] uo_out[2] uo_out[1] uo_out[0] ena clk uio_out[7] uio_out[6] uio_out[5]
++ uio_out[4] uio_out[3] uio_out[2] uio_out[1] uio_out[0] rst_n uio_oe[7] uio_oe[6] uio_oe[5] uio_oe[4] uio_oe[3] uio_oe[2] uio_oe[1] uio_oe[0]
++ ui_in[7] ui_in[6] ui_in[5] ui_in[4] ui_in[3] ui_in[2] ui_in[1] ui_in[0] uio_in[7] uio_in[6] uio_in[5] uio_in[4] uio_in[3] uio_in[2]
++ uio_in[1] uio_in[0] ua[5] ua[4] ua[3] ua[2] ua[1] ua[0] ua[7] ua[6] VAPWR VDPWR VGND toplevel
+.ends
+
+* expanding   symbol:  inverter.sym # of pins=4
+** sym_path: /home/htamas/progs/hybrid/xschem/inverter.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/inverter.sch
+.subckt inverter VDD IN OUT VSS
+*.PININFO VSS:B VDD:B IN:I OUT:O
+XM1 OUT IN VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+XM2 OUT IN VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  passgate.sym # of pins=5
+** sym_path: /home/htamas/progs/hybrid/xschem/passgate.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/passgate.sch
+.subckt passgate VDD UA UB EN VSS
+*.PININFO VSS:B VDD:B UA:B UB:B EN:I
+XM1 UA EN UB VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+XM2 UA net1 UB VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+x1 VDD EN net1 VSS inverter
+.ends
+
+
+* expanding   symbol:  /home/htamas/progs/hybrid/xschem/toplevel.sym # of pins=13
+** sym_path: /home/htamas/progs/hybrid/xschem/toplevel.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/toplevel.sch
+.subckt toplevel uo_out[7] uo_out[6] uo_out[5] uo_out[4] uo_out[3] uo_out[2] uo_out[1] uo_out[0] ena clk uio_out[7] uio_out[6]
++ uio_out[5] uio_out[4] uio_out[3] uio_out[2] uio_out[1] uio_out[0] rst_n uio_oe[7] uio_oe[6] uio_oe[5] uio_oe[4] uio_oe[3] uio_oe[2]
++ uio_oe[1] uio_oe[0] ui_in[7] ui_in[6] ui_in[5] ui_in[4] ui_in[3] ui_in[2] ui_in[1] ui_in[0] uio_in[7] uio_in[6] uio_in[5] uio_in[4]
++ uio_in[3] uio_in[2] uio_in[1] uio_in[0] ua[5] ua[4] ua[3] ua[2] ua[1] ua[0] ua[7] ua[6] VAPWR VDPWR VGND
+*.PININFO ena:I clk:I rst_n:I ui_in[7:0]:I uio_in[7:0]:I uo_out[7:0]:O uio_out[7:0]:O uio_oe[7:0]:O VAPWR:B VDPWR:B VGND:B
+*+ ua[5:0]:B ua[7:6]:B
+x1 VAPWR ua[0] ua[2] ua[1] VGND hybrid
+x2 VAPWR ua[5] ua[3] ui_in_3v3[3] ui_in_3v3[2] ui_in_3v3[1] ui_in_3v3[0] ua[4] VGND hybrid_ctrl
+x3 VAPWR ua[2] ua[3] ui_in_3v3[4] VGND passgate
+xsi[7] VAPWR VDPWR ui_in_3v3[7] ui_in[7] VGND level_shifter
+xsi[6] VAPWR VDPWR ui_in_3v3[6] ui_in[6] VGND level_shifter
+xsi[5] VAPWR VDPWR ui_in_3v3[5] ui_in[5] VGND level_shifter
+xsi[4] VAPWR VDPWR ui_in_3v3[4] ui_in[4] VGND level_shifter
+xsi[3] VAPWR VDPWR ui_in_3v3[3] ui_in[3] VGND level_shifter
+xsi[2] VAPWR VDPWR ui_in_3v3[2] ui_in[2] VGND level_shifter
+xsi[1] VAPWR VDPWR ui_in_3v3[1] ui_in[1] VGND level_shifter
+xsi[0] VAPWR VDPWR ui_in_3v3[0] ui_in[0] VGND level_shifter
+* noconn ena
+* noconn clk
+* noconn rst_n
+* noconn uio_in[7:0]
+* noconn ua[7:6]
+xso[7] VDPWR VAPWR uo_out[7] decoder_out[7] VGND level_shifter
+xso[6] VDPWR VAPWR uo_out[6] decoder_out[6] VGND level_shifter
+xso[5] VDPWR VAPWR uo_out[5] decoder_out[5] VGND level_shifter
+xso[4] VDPWR VAPWR uo_out[4] decoder_out[4] VGND level_shifter
+xso[3] VDPWR VAPWR uo_out[3] decoder_out[3] VGND level_shifter
+xso[2] VDPWR VAPWR uo_out[2] decoder_out[2] VGND level_shifter
+xso[1] VDPWR VAPWR uo_out[1] decoder_out[1] VGND level_shifter
+xso[0] VDPWR VAPWR uo_out[0] decoder_out[0] VGND level_shifter
+xsio[7] VDPWR VAPWR uio_out[7] decoder_out[15] VGND level_shifter
+xsio[6] VDPWR VAPWR uio_out[6] decoder_out[14] VGND level_shifter
+xsio[5] VDPWR VAPWR uio_out[5] decoder_out[13] VGND level_shifter
+xsio[4] VDPWR VAPWR uio_out[4] decoder_out[12] VGND level_shifter
+xsio[3] VDPWR VAPWR uio_out[3] decoder_out[11] VGND level_shifter
+xsio[2] VDPWR VAPWR uio_out[2] decoder_out[10] VGND level_shifter
+xsio[1] VDPWR VAPWR uio_out[1] decoder_out[9] VGND level_shifter
+xsio[0] VDPWR VAPWR uio_out[0] decoder_out[8] VGND level_shifter
+x4 VAPWR ui_in_3v3[7] ui_in_3v3[6] ui_in_3v3[5] ui_in_3v3[4] decoder_out[15] decoder_out[14] decoder_out[13] decoder_out[12]
++ decoder_out[11] decoder_out[10] decoder_out[9] decoder_out[8] decoder_out[7] decoder_out[6] decoder_out[5] decoder_out[4] decoder_out[3]
++ decoder_out[2] decoder_out[1] decoder_out[0] VGND decoder4_signed
+xtie[7] VDPWR uio_oe[7] VGND tie_high
+xtie[6] VDPWR uio_oe[6] VGND tie_high
+xtie[5] VDPWR uio_oe[5] VGND tie_high
+xtie[4] VDPWR uio_oe[4] VGND tie_high
+xtie[3] VDPWR uio_oe[3] VGND tie_high
+xtie[2] VDPWR uio_oe[2] VGND tie_high
+xtie[1] VDPWR uio_oe[1] VGND tie_high
+xtie[0] VDPWR uio_oe[0] VGND tie_high
+.ends
+
+
+* expanding   symbol:  hybrid.sym # of pins=5
+** sym_path: /home/htamas/progs/hybrid/xschem/hybrid.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/hybrid.sch
+.subckt hybrid VDD IN LINE OUT VSS
+*.PININFO VDD:B VSS:B IN:I OUT:O LINE:B
+x1 VDD OUT LINE net1 VSS opamp
+XR1 IN LINE VSS sky130_fd_pr__res_xhigh_po_0p35 L=256 mult=1 m=1
+XR2 IN net1 VSS sky130_fd_pr__res_xhigh_po_0p35 L=256 mult=1 m=1
+XR3 net1 OUT VSS sky130_fd_pr__res_xhigh_po_0p35 L=256 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  hybrid_ctrl.sym # of pins=6
+** sym_path: /home/htamas/progs/hybrid/xschem/hybrid_ctrl.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/hybrid_ctrl.sch
+.subckt hybrid_ctrl VDD IN LINE D3 D2 D1 D0 OUT VSS
+*.PININFO VDD:B VSS:B IN:I OUT:O LINE:B D[3..0]:I
+x1 VDD OUT LINE net1 VSS opamp
+XR1 IN LINE VSS sky130_fd_pr__res_xhigh_po_0p35 L=256 mult=1 m=1
+x2 VDD D3 D2 D1 D0 IN net1 OUT VSS digipot
+.ends
+
+
+* expanding   symbol:  level_shifter.sym # of pins=5
+** sym_path: /home/htamas/progs/hybrid/xschem/level_shifter.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/level_shifter.sch
+.subckt level_shifter OVDD IVDD OUT IN VSS
+*.PININFO OVDD:B VSS:B IN:I OUT:O IVDD:B
+XM21 net1 IN VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+XM25 net1 OUT OVDD OVDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+XM1 OUT net1 OVDD OVDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+XM2 OUT IN_B VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+x1 IVDD IN IN_B VSS inverter
+.ends
+
+
+* expanding   symbol:  decoder4_signed.sym # of pins=4
+** sym_path: /home/htamas/progs/hybrid/xschem/decoder4_signed.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/decoder4_signed.sch
+.subckt decoder4_signed VDD D3 D2 D1 D0 U15 U14 U13 U12 U11 U10 U9 U8 U7 U6 U5 U4 U3 U2 U1 U0 VSS
+*.PININFO VDD:B VSS:B U[15..0]:O D[3..0]:I
+x1 VDD D0 D3 net4 net3 net1 net2 VSS VDD decoder2
+x2 VDD D2 D1 U14 U12 U10 U8 VSS net2 decoder2
+x3 VDD D2 D1 U6 U4 U2 U0 VSS net1 decoder2
+x4 VDD D2 D1 U15 U13 U11 U9 VSS net3 decoder2
+x5 VDD D2 D1 U7 U5 U3 U1 VSS net4 decoder2
+.ends
+
+
+* expanding   symbol:  tie_high.sym # of pins=3
+** sym_path: /home/htamas/progs/hybrid/xschem/tie_high.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/tie_high.sch
+.subckt tie_high VDD HI VSS
+*.PININFO VSS:B VDD:B HI:O
+XM1 net1 net1 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+XM2 HI net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+.ends
+
+
+* expanding   symbol:  opamp.sym # of pins=5
+** sym_path: /home/htamas/progs/hybrid/xschem/opamp.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/opamp.sch
+.subckt opamp VDD OUT P N VSS
+*.PININFO VDD:B VSS:B P:I N:I OUT:O
+XR1 net2 VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=25 mult=1 m=1
+XM1 net2 net2 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
+XM7 net1 net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=2
+XM8 OUT net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=2
+XM4 net6 net2 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
+XM5 net1 P net6 VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
+XM6 OUT N net6 VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
+XM2 net5 net2 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
+XM9 net4 net5 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=2
+XM3 VDD net5 net5 VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=2
+XM10 net3 P net4 VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=2
+XM11 OUT N net4 VDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=4 nf=1 m=2
+XM12 net3 net3 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
+XM13 OUT net3 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
+.ends
+
+
+* expanding   symbol:  digipot.sym # of pins=6
+** sym_path: /home/htamas/progs/hybrid/xschem/digipot.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/digipot.sch
+.subckt digipot VDD D3 D2 D1 D0 A W B VSS
+*.PININFO VDD:B VSS:B A:B B:B W:B D[3..0]:I
+x1 VDD D3 D2 D1 D0 net1[15] net1[14] net1[13] net1[12] net1[11] net1[10] net1[9] net1[8] net1[7] net1[6] net1[5] net1[4] net1[3]
++ net1[2] net1[1] net1[0] VSS decoder4_signed
+x2 VDD net1[15] net1[14] net1[13] net1[12] net1[11] net1[10] net1[9] net1[8] net1[7] net1[6] net1[5] net1[4] net1[3] net1[2]
++ net1[1] net1[0] A W B VSS digipot_1hot
+.ends
+
+
+* expanding   symbol:  decoder2.sym # of pins=9
+** sym_path: /home/htamas/progs/hybrid/xschem/decoder2.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/decoder2.sch
+.subckt decoder2 VDD D1 D0 U3 U2 U1 U0 VSS EN
+*.PININFO VDD:B VSS:B D0:I D1:I U0:O U1:O U2:O U3:O EN:I
+x6 VDD net5 net4 U0 net3 VSS nor3
+x7 VDD net5 net1 U1 net3 VSS nor3
+x8 VDD net2 net4 U2 net3 VSS nor3
+x9 VDD net2 net1 U3 net3 VSS nor3
+x1 VDD EN net3 VSS inverter
+x2 VDD D0 net1 VSS inverter
+x3 VDD net1 net4 VSS inverter
+x4 VDD D1 net2 VSS inverter
+x5 VDD net2 net5 VSS inverter
+.ends
+
+
+* expanding   symbol:  digipot_1hot.sym # of pins=6
+** sym_path: /home/htamas/progs/hybrid/xschem/digipot_1hot.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/digipot_1hot.sch
+.subckt digipot_1hot VDD U15 U14 U13 U12 U11 U10 U9 U8 U7 U6 U5 U4 U3 U2 U1 U0 A W B VSS
+*.PININFO VDD:B VSS:B A:B B:B W:B U[15..0]:I
+XR1 A net1 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR2 net1 net2 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR3 net2 net3 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR4 net3 net4 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR5 net4 net5 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x1 VDD A W U0 VSS passgate
+x2 VDD net1 W U1 VSS passgate
+x3 VDD net2 W U2 VSS passgate
+x4 VDD net3 W U3 VSS passgate
+x5 VDD net4 W U4 VSS passgate
+XR6 net5 net6 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x6 VDD net5 W U5 VSS passgate
+XR7 net6 net7 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x7 VDD net6 W U6 VSS passgate
+XR8 net8 net7 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x8 VDD net7 W U7 VSS passgate
+XR9 net8 net9 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR10 net9 net10 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR11 net10 net11 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR12 net11 net12 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+XR13 net12 net13 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x9 VDD net8 W U8 VSS passgate
+x10 VDD net9 W U9 VSS passgate
+x11 VDD net10 W U10 VSS passgate
+x12 VDD net11 W U11 VSS passgate
+x13 VDD net12 W U12 VSS passgate
+XR14 net13 net14 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x14 VDD net13 W U13 VSS passgate
+XR15 net14 net15 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+x15 VDD net14 W U14 VSS passgate
+x16 VDD net15 W U15 VSS passgate
+XR16 B net15 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  nor3.sym # of pins=6
+** sym_path: /home/htamas/progs/hybrid/xschem/nor3.sym
+** sch_path: /home/htamas/progs/hybrid/xschem/nor3.sch
+.subckt nor3 VDD A B OUT C VSS
+*.PININFO VSS:B VDD:B B:I A:I C:I OUT:O
+XM2 OUT B VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+XM1 OUT A VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+XM4 net1 A VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+XM3 OUT C VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
+XM5 net2 B net1 VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+XM6 OUT C net2 VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
+.ends
+
+.end

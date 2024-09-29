@@ -1,0 +1,17 @@
+magic
+tech sky130A
+timestamp 1727607728
+use guard_left  guard_left_0
+timestamp 1727597281
+transform 1 0 0 0 1 0
+box -30 0 94 646
+use guard_right  guard_right_0
+timestamp 1727597281
+transform 1 0 1050 0 1 0
+box 144 0 268 646
+use tie_high  tie_high_1
+array 0 7 150 0 0 646
+timestamp 1727607685
+transform 1 0 0 0 1 0
+box 0 0 238 646
+<< end >>

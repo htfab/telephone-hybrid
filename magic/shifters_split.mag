@@ -1,0 +1,34 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1727607728
+use guard_left  guard_left_0
+timestamp 1727597281
+transform 1 0 0 0 1 0
+box -60 0 188 1292
+use guard_left  guard_left_1
+timestamp 1727597281
+transform 1 0 0 0 1 4835
+box -60 0 188 1292
+use guard_left  guard_left_2
+timestamp 1727597281
+transform 1 0 0 0 1 1342
+box -60 0 188 1292
+use guard_right  guard_right_0
+timestamp 1727597281
+transform 1 0 2100 0 1 0
+box 288 0 536 1292
+use guard_right  guard_right_1
+timestamp 1727597281
+transform 1 0 2100 0 1 4835
+box 288 0 536 1292
+use guard_right  guard_right_2
+timestamp 1727597281
+transform 1 0 2100 0 1 1342
+box 288 0 536 1292
+use shifter_split  shifter_split_1
+array 0 7 300 0 0 6127
+timestamp 1727607685
+transform 1 0 0 0 1 0
+box 0 0 476 6127
+<< end >>

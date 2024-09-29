@@ -1,0 +1,60 @@
+magic
+tech sky130A
+timestamp 1727605497
+<< nwell >>
+rect -24 477 0 1038
+rect 238 477 262 1038
+<< mvpsubdiff >>
+rect -1 405 50 434
+rect 188 405 244 434
+rect -1 380 28 405
+rect -1 72 5 380
+rect 22 72 28 380
+rect -1 47 28 72
+rect 215 380 244 405
+rect 215 72 221 380
+rect 238 72 244 380
+rect 215 47 244 72
+rect -1 18 50 47
+rect 188 18 244 47
+<< mvnsubdiff >>
+rect 9 976 50 1005
+rect 188 976 229 1005
+rect 9 951 38 976
+rect 9 564 15 951
+rect 32 564 38 951
+rect 9 539 38 564
+rect 200 951 229 976
+rect 200 564 206 951
+rect 223 564 229 951
+rect 200 539 229 564
+rect 9 510 50 539
+rect 188 510 229 539
+<< mvpsubdiffcont >>
+rect 5 72 22 380
+rect 221 72 238 380
+<< mvnsubdiffcont >>
+rect 15 564 32 951
+rect 206 564 223 951
+<< locali >>
+rect 15 982 50 999
+rect 188 982 223 999
+rect 15 951 32 982
+rect 15 533 32 564
+rect 206 951 223 982
+rect 206 533 223 564
+rect 15 516 50 533
+rect 188 516 223 533
+rect 5 411 50 428
+rect 188 411 238 428
+rect 5 380 22 411
+rect 5 41 22 72
+rect 221 380 238 411
+rect 221 41 238 72
+rect 5 24 50 41
+rect 188 24 238 41
+use passgate  passgate_0
+timestamp 1727597281
+transform -1 0 238 0 1 0
+box 0 0 238 1038
+<< end >>

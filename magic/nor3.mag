@@ -1,0 +1,73 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1727607685
+<< metal1 >>
+rect 88 1168 964 1226
+rect 130 845 164 1168
+rect 130 94 164 347
+rect 221 135 255 1136
+rect 312 966 346 1053
+rect 430 966 464 1053
+rect 312 932 464 966
+rect 312 845 346 932
+rect 430 845 464 932
+rect 297 570 303 622
+rect 355 570 361 622
+rect 312 209 346 570
+rect 430 94 464 347
+rect 521 135 555 1136
+rect 612 966 646 1053
+rect 730 966 764 1053
+rect 612 932 764 966
+rect 612 845 646 932
+rect 730 845 764 932
+rect 597 570 603 622
+rect 655 570 661 622
+rect 612 209 646 570
+rect 730 94 764 347
+rect 821 135 855 1136
+rect 912 622 946 1053
+rect 897 570 903 622
+rect 955 570 961 622
+rect 912 209 946 570
+rect 88 36 964 94
+<< via1 >>
+rect 303 570 355 622
+rect 603 570 655 622
+rect 903 570 955 622
+<< metal2 >>
+rect 303 622 355 628
+rect 603 622 655 628
+rect 355 579 603 613
+rect 303 564 355 570
+rect 903 622 955 628
+rect 655 579 903 613
+rect 603 564 655 570
+rect 903 564 955 570
+use transistor_pair  transistor_pair_0
+timestamp 1727597281
+transform 1 0 600 0 1 0
+box 0 0 476 1292
+use transistor_pair  transistor_pair_1
+timestamp 1727597281
+transform 1 0 0 0 1 0
+box 0 0 476 1292
+use transistor_pair  transistor_pair_2
+timestamp 1727597281
+transform 1 0 300 0 1 0
+box 0 0 476 1292
+<< labels >>
+flabel metal1 221 135 255 1136 0 FreeSans 128 0 0 0 A
+port 0 nsew
+flabel metal1 521 135 555 1136 0 FreeSans 128 0 0 0 B
+port 1 nsew
+flabel metal1 821 135 855 1136 0 FreeSans 128 0 0 0 C
+port 2 nsew
+flabel metal1 912 209 946 1053 0 FreeSans 128 0 0 0 OUT
+port 3 nsew
+flabel metal1 88 1168 964 1226 0 FreeSans 128 0 0 0 VDD
+port 4 nsew
+flabel metal1 88 36 964 94 0 FreeSans 128 0 0 0 VSS
+port 5 nsew
+<< end >>

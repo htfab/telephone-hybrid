@@ -9,12 +9,13 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+To be added later. In the meanwhile, see the Wikipedia page for [Telephone hybrid](https://en.wikipedia.org/wiki/Telephone_hybrid).
 
 ## How to test
 
-Explain how to use your project
+Add a wire between LINE1 and LINE2 (or LINE1 and the line pin of another hybrid).
+Voltage signals sent to IN1 should appear on OUT2 while those sent to IN2 should appear on OUT1.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Analog test equipment (e.g. function generator and oscilloscope)

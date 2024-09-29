@@ -1,0 +1,13 @@
+v {xschem version=3.4.5 file_version=1.2
+}
+G {}
+K {type=noconn
+format="* noconn @#0:net_name"
+template="name=l1"}
+V {}
+S {}
+E {}
+L 4 0 0 20 0 {}
+L 4 15 -5 25 5 {}
+L 4 15 5 25 -5 {}
+B 5 -2.5 -2.5 2.5 2.5 {name=PIN dir=inout}

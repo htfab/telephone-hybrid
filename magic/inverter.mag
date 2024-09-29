@@ -1,0 +1,25 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1727607685
+<< metal1 >>
+rect 88 1168 388 1226
+rect 130 845 164 1168
+rect 130 94 164 347
+rect 221 141 255 1130
+rect 312 209 346 1053
+rect 88 36 388 94
+use transistor_pair  transistor_pair_1
+timestamp 1727597281
+transform 1 0 0 0 1 0
+box 0 0 476 1292
+<< labels >>
+flabel metal1 221 141 255 1130 0 FreeSans 256 0 0 0 IN
+port 0 nsew
+flabel metal1 312 209 346 1053 0 FreeSans 256 0 0 0 OUT
+port 1 nsew
+flabel metal1 88 1168 388 1226 0 FreeSans 256 0 0 0 VDD
+port 2 nsew
+flabel metal1 88 36 388 94 0 FreeSans 256 0 0 0 VSS
+port 3 nsew
+<< end >>
