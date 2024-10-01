@@ -1,4 +1,4 @@
-** sch_path: /home/htamas/progs/hybrid/xschem/toplevel_dummy.sch
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/toplevel_dummy.sch
 .subckt toplevel_dummy ena clk rst_n ui_in[7] ui_in[6] ui_in[5] ui_in[4] ui_in[3] ui_in[2] ui_in[1] ui_in[0] uio_in[7] uio_in[6]
 + uio_in[5] uio_in[4] uio_in[3] uio_in[2] uio_in[1] uio_in[0] uo_out[7] uo_out[6] uo_out[5] uo_out[4] uo_out[3] uo_out[2] uo_out[1] uo_out[0]
 + uio_out[7] uio_out[6] uio_out[5] uio_out[4] uio_out[3] uio_out[2] uio_out[1] uio_out[0] uio_oe[7] uio_oe[6] uio_oe[5] uio_oe[4] uio_oe[3]
@@ -33,8 +33,8 @@ x1 uo_out[7] uo_out[6] uo_out[5] uo_out[4] uo_out[3] uo_out[2] uo_out[1] uo_out[
 .ends
 
 * expanding   symbol:  inverter.sym # of pins=4
-** sym_path: /home/htamas/progs/hybrid/xschem/inverter.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/inverter.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/inverter.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/inverter.sch
 .subckt inverter VDD IN OUT VSS
 *.PININFO VSS:B VDD:B IN:I OUT:O
 XM1 OUT IN VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
@@ -43,8 +43,8 @@ XM2 OUT IN VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
 
 
 * expanding   symbol:  passgate.sym # of pins=5
-** sym_path: /home/htamas/progs/hybrid/xschem/passgate.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/passgate.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/passgate.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/passgate.sch
 .subckt passgate VDD UA UB EN VSS
 *.PININFO VSS:B VDD:B UA:B UB:B EN:I
 XM1 UA EN UB VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
@@ -53,9 +53,9 @@ x1 VDD EN net1 VSS inverter
 .ends
 
 
-* expanding   symbol:  /home/htamas/progs/hybrid/xschem/toplevel.sym # of pins=13
-** sym_path: /home/htamas/progs/hybrid/xschem/toplevel.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/toplevel.sch
+* expanding   symbol:  toplevel.sym # of pins=13
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/toplevel.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/toplevel.sch
 .subckt toplevel uo_out[7] uo_out[6] uo_out[5] uo_out[4] uo_out[3] uo_out[2] uo_out[1] uo_out[0] ena clk uio_out[7] uio_out[6]
 + uio_out[5] uio_out[4] uio_out[3] uio_out[2] uio_out[1] uio_out[0] rst_n uio_oe[7] uio_oe[6] uio_oe[5] uio_oe[4] uio_oe[3] uio_oe[2]
 + uio_oe[1] uio_oe[0] ui_in[7] ui_in[6] ui_in[5] ui_in[4] ui_in[3] ui_in[2] ui_in[1] ui_in[0] uio_in[7] uio_in[6] uio_in[5] uio_in[4]
@@ -109,8 +109,8 @@ xtie[0] VDPWR uio_oe[0] VGND tie_high
 
 
 * expanding   symbol:  hybrid.sym # of pins=5
-** sym_path: /home/htamas/progs/hybrid/xschem/hybrid.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/hybrid.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/hybrid.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/hybrid.sch
 .subckt hybrid VDD IN LINE OUT VSS
 *.PININFO VDD:B VSS:B IN:I OUT:O LINE:B
 x1 VDD OUT LINE net1 VSS opamp
@@ -121,8 +121,8 @@ XR3 net1 OUT VSS sky130_fd_pr__res_xhigh_po_0p35 L=256 mult=1 m=1
 
 
 * expanding   symbol:  hybrid_ctrl.sym # of pins=6
-** sym_path: /home/htamas/progs/hybrid/xschem/hybrid_ctrl.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/hybrid_ctrl.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/hybrid_ctrl.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/hybrid_ctrl.sch
 .subckt hybrid_ctrl VDD IN LINE D3 D2 D1 D0 OUT VSS
 *.PININFO VDD:B VSS:B IN:I OUT:O LINE:B D[3..0]:I
 x1 VDD OUT LINE net1 VSS opamp
@@ -132,8 +132,8 @@ x2 VDD D3 D2 D1 D0 IN net1 OUT VSS digipot
 
 
 * expanding   symbol:  level_shifter.sym # of pins=5
-** sym_path: /home/htamas/progs/hybrid/xschem/level_shifter.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/level_shifter.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/level_shifter.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/level_shifter.sch
 .subckt level_shifter OVDD IVDD OUT IN VSS
 *.PININFO OVDD:B VSS:B IN:I OUT:O IVDD:B
 XM21 net1 IN VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
@@ -145,8 +145,8 @@ x1 IVDD IN IN_B VSS inverter
 
 
 * expanding   symbol:  decoder4_signed.sym # of pins=4
-** sym_path: /home/htamas/progs/hybrid/xschem/decoder4_signed.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/decoder4_signed.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/decoder4_signed.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/decoder4_signed.sch
 .subckt decoder4_signed VDD D3 D2 D1 D0 U15 U14 U13 U12 U11 U10 U9 U8 U7 U6 U5 U4 U3 U2 U1 U0 VSS
 *.PININFO VDD:B VSS:B U[15..0]:O D[3..0]:I
 x1 VDD D0 D3 net4 net3 net1 net2 VSS VDD decoder2
@@ -158,8 +158,8 @@ x5 VDD D2 D1 U7 U5 U3 U1 VSS net4 decoder2
 
 
 * expanding   symbol:  tie_high.sym # of pins=3
-** sym_path: /home/htamas/progs/hybrid/xschem/tie_high.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/tie_high.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/tie_high.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/tie_high.sch
 .subckt tie_high VDD HI VSS
 *.PININFO VSS:B VDD:B HI:O
 XM1 net1 net1 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1
@@ -168,8 +168,8 @@ XM2 HI net1 VDD VDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=1 nf=1 m=1
 
 
 * expanding   symbol:  opamp.sym # of pins=5
-** sym_path: /home/htamas/progs/hybrid/xschem/opamp.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/opamp.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/opamp.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/opamp.sch
 .subckt opamp VDD OUT P N VSS
 *.PININFO VDD:B VSS:B P:I N:I OUT:O
 XR1 net2 VDD VSS sky130_fd_pr__res_xhigh_po_0p35 L=25 mult=1 m=1
@@ -190,8 +190,8 @@ XM13 OUT net3 VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=2
 
 
 * expanding   symbol:  digipot.sym # of pins=6
-** sym_path: /home/htamas/progs/hybrid/xschem/digipot.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/digipot.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/digipot.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/digipot.sch
 .subckt digipot VDD D3 D2 D1 D0 A W B VSS
 *.PININFO VDD:B VSS:B A:B B:B W:B D[3..0]:I
 x1 VDD D3 D2 D1 D0 net1[15] net1[14] net1[13] net1[12] net1[11] net1[10] net1[9] net1[8] net1[7] net1[6] net1[5] net1[4] net1[3]
@@ -202,8 +202,8 @@ x2 VDD net1[15] net1[14] net1[13] net1[12] net1[11] net1[10] net1[9] net1[8] net
 
 
 * expanding   symbol:  decoder2.sym # of pins=9
-** sym_path: /home/htamas/progs/hybrid/xschem/decoder2.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/decoder2.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/decoder2.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/decoder2.sch
 .subckt decoder2 VDD D1 D0 U3 U2 U1 U0 VSS EN
 *.PININFO VDD:B VSS:B D0:I D1:I U0:O U1:O U2:O U3:O EN:I
 x6 VDD net5 net4 U0 net3 VSS nor3
@@ -219,8 +219,8 @@ x5 VDD net2 net5 VSS inverter
 
 
 * expanding   symbol:  digipot_1hot.sym # of pins=6
-** sym_path: /home/htamas/progs/hybrid/xschem/digipot_1hot.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/digipot_1hot.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/digipot_1hot.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/digipot_1hot.sch
 .subckt digipot_1hot VDD U15 U14 U13 U12 U11 U10 U9 U8 U7 U6 U5 U4 U3 U2 U1 U0 A W B VSS
 *.PININFO VDD:B VSS:B A:B B:B W:B U[15..0]:I
 XR1 A net1 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
@@ -259,8 +259,8 @@ XR16 B net15 VSS sky130_fd_pr__res_xhigh_po_0p35 L=32 mult=1 m=1
 
 
 * expanding   symbol:  nor3.sym # of pins=6
-** sym_path: /home/htamas/progs/hybrid/xschem/nor3.sym
-** sch_path: /home/htamas/progs/hybrid/xschem/nor3.sch
+** sym_path: /home/htamas/git/telephone-hybrid/xschem/nor3.sym
+** sch_path: /home/htamas/git/telephone-hybrid/xschem/nor3.sch
 .subckt nor3 VDD A B OUT C VSS
 *.PININFO VSS:B VDD:B B:I A:I C:I OUT:O
 XM2 OUT B VSS VSS sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=0.65 nf=1 m=1

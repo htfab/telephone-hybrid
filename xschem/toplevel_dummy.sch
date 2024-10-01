@@ -54,7 +54,7 @@ C {devices/lab_pin.sym} 1000 -760 0 1 {name=p39 sig_type=std_logic lab=VGND
 }
 C {devices/lab_pin.sym} 980 -650 0 1 {name=p40 sig_type=std_logic lab=VGND
 }
-C {/home/htamas/progs/hybrid/xschem/toplevel.sym} 520 -680 0 0 {name=x1}
+C {toplevel.sym} 520 -680 0 0 {name=x1}
 C {devices/lab_pin.sym} 480 -750 0 0 {name=p13 sig_type=std_logic lab=VDPWR}
 C {devices/lab_pin.sym} 370 -680 0 0 {name=p14 sig_type=std_logic lab=rst_n}
 C {devices/lab_pin.sym} 370 -660 0 0 {name=p16 sig_type=std_logic lab=ui_in[7:0]}

@@ -63,7 +63,7 @@ C {devices/lab_pin.sym} 700 -710 0 1 {name=p59 sig_type=std_logic lab=ui_in_3v3[
 C {decoder4_signed.sym} 720 -520 0 0 {name=x4}
 C {devices/lab_pin.sym} 720 -590 0 1 {name=p30 sig_type=std_logic lab=VAPWR}
 C {devices/lab_pin.sym} 720 -450 0 1 {name=p31 sig_type=std_logic lab=VGND}
-C {devices/lab_pin.sym} 590 -520 0 0 {name=p32 sig_type=std_logic lab=ui_in_3v3[7:3]}
+C {devices/lab_pin.sym} 590 -520 0 0 {name=p32 sig_type=std_logic lab=ui_in_3v3[7:4]}
 C {devices/lab_pin.sym} 850 -520 0 1 {name=p52 sig_type=std_logic lab=decoder_out[15:0]}
 C {devices/lab_pin.sym} 340 -760 0 0 {name=p60 sig_type=std_logic lab=ua[0]}
 C {devices/lab_pin.sym} 340 -740 0 0 {name=p61 sig_type=std_logic lab=ua[1]}
