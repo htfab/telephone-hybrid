@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1731100676
+timestamp 1731102314
 << metal1 >>
 rect 0 44952 200 45152
 rect 28872 44952 29072 45152
@@ -16,9 +16,9 @@ timestamp 1731100676
 transform -1 0 13998 0 1 4355
 box -686 -355 8138 16559
 use hybrid_dnwell  hybrid_dnwell_0
-timestamp 1727597281
+timestamp 1731102314
 transform 1 0 20445 0 1 4355
-box -445 -355 4156 10883
+box -518 -355 4156 10883
 use passgate_dnwell  passgate_dnwell_0
 timestamp 1727641355
 transform 1 0 17134 0 1 4415
