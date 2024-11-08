@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1727641872
+timestamp 1731101883
 << metal1 >>
 rect 0 44952 200 45152
 rect 28872 44952 29072 45152
@@ -110,11 +110,11 @@ rect 19506 0 19686 200
 rect 23370 0 23550 200
 rect 27234 0 27414 200
 use power_routing  power_routing_0
-timestamp 1727597281
+timestamp 1731101883
 transform 1 0 0 0 1 0
 box 0 0 29072 45152
 use toplevel  toplevel_0
-timestamp 1727641872
+timestamp 1731100676
 transform 1 0 0 0 1 0
 box 0 0 29072 45152
 << labels >>
